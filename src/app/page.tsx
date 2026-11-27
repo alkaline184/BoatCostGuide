@@ -45,7 +45,8 @@ export default function Home() {
         <picture>
           <source
             media="(max-width: 650px)"
-            srcSet="/marine/hero-mobile-420.webp 420w, /marine/hero-mobile-720.webp 720w"
+            type="image/avif"
+            srcSet="/marine/hero-mobile-420.avif 420w, /marine/hero-mobile-600.avif 600w"
             sizes="100vw"
           />
           <Image
@@ -68,12 +69,12 @@ export default function Home() {
             build a budget for the seasons ahead.
           </p>
           <div className="discovery-actions">
-            <Link href="/#explore" className="button discovery-primary">
+            <a href="#explore" className="button discovery-primary">
               Explore boat types
-            </Link>
-            <Link href="/#calculators" className="button discovery-secondary">
+            </a>
+            <a href="#calculators" className="button discovery-secondary">
               Plan your budget
-            </Link>
+            </a>
           </div>
         </div>
       </section>

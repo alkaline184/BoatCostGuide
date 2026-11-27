@@ -1,6 +1,6 @@
 # Marine visual assets
 
-Generated with the built-in ImageGen tool for BoatCostGuide. The production filenames are under [public/marine](../public/marine), and include 420px and 720px portrait hero crops, with a separate updated [social image](../public/social.png). All are generic visual illustrations. No actual model photography or manufacturer assets were used.
+Generated with the built-in ImageGen tool for BoatCostGuide. The production filenames are under [public/marine](../public/marine), and include 420px and 600px AVIF portrait hero crops, with a separate updated [social image](../public/social.png). All are generic visual illustrations. No actual model photography or manufacturer assets were used.
 
 | File                  | Intent                                                                                               |
 | --------------------- | ---------------------------------------------------------------------------------------------------- |
