@@ -42,14 +42,22 @@ export default function Home() {
         }}
       />
       <section className="discovery-hero" aria-labelledby="home-title">
-        <Image
-          src="/marine/hero.webp"
-          alt=""
-          fill
-          preload
-          sizes="100vw"
-          className="discovery-hero-image"
-        />
+        <picture>
+          <source
+            media="(max-width: 650px)"
+            srcSet="/marine/hero-mobile-420.webp 420w, /marine/hero-mobile-720.webp 720w"
+            sizes="100vw"
+          />
+          <Image
+            src="/marine/hero.webp"
+            alt=""
+            fill
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
+            className="discovery-hero-image"
+          />
+        </picture>
         <div className="container discovery-hero-content">
           <p className="editorial-kicker">Boat research &amp; ownership</p>
           <h1 id="home-title">
