@@ -414,7 +414,7 @@ export function Schedule({ rows, name }: { rows: PaymentRow[]; name: string }) {
 
 export const downOptions = [
   ["amount", "US dollars"],
-  ["percent", "Percent of price"],
+  ["percent", "Percent"],
 ] as const;
 export function termFields(s: Scenario) {
   return (
