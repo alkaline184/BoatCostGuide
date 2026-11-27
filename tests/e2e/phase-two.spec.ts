@@ -188,6 +188,20 @@ test("calculator navigation and screenshots", async ({ page }, testInfo) => {
       `https://boatcostguide.com${path}`,
     );
     await page.evaluate(() => document.fonts.ready);
+    const clippedControls = await page
+      .locator(".calculator-inputs")
+      .evaluate((panel) => {
+        const bounds = panel.getBoundingClientRect();
+        return [...panel.querySelectorAll("select,input")].filter((control) => {
+          const rect = control.getBoundingClientRect();
+          return (
+            rect.width > 0 &&
+            (rect.left < bounds.left || rect.right > bounds.right)
+          );
+        }).length;
+      });
+    expect(clippedControls).toBe(0);
+
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth),
     ).toBeLessThanOrEqual(page.viewportSize()!.width);
