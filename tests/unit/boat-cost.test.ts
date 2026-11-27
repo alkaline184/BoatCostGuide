@@ -67,12 +67,12 @@ describe("boat cost engine", () => {
         .monthlyLoan,
     ).toBeCloseTo(300, 9);
     const result = calculateBoatCost({
-      price: 1e12,
-      operating: 1e12,
+      price: 25_000_000,
+      operating: 1_000_000,
       downPayment: 0,
       downPaymentMode: "amount",
-      annualRate: 1000,
-      years: 100,
+      annualRate: 35,
+      years: 50,
     });
     expect(Object.values(result).every(Number.isFinite)).toBe(true);
     expect(
@@ -95,19 +95,19 @@ describe("boat cost engine", () => {
   it.each([
     { price: -1 },
     { price: NaN },
-    { price: 1e12 + 1 },
+    { price: 25_000_000 + 1 },
     { annualRate: -1 },
     { annualRate: Infinity },
-    { annualRate: 1001 },
+    { annualRate: 36 },
     { downPayment: -1 },
     { downPayment: 101 },
     { downPaymentMode: "amount" as const, downPayment: 45000.01 },
     { years: 0 },
-    { years: 101 },
+    { years: 51 },
     { years: 2.5 },
     { operating: Infinity },
     { operating: -1 },
-    { operating: 1e12 + 1 },
+    { operating: 1_000_000 + 1 },
   ])("rejects invalid scenario %j", (values) => {
     const input = { ...illustrativeInputs, ...values };
     expect(Object.keys(validateBoatCost(input))).not.toHaveLength(0);

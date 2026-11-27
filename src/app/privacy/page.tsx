@@ -14,7 +14,10 @@ export default function Privacy() {
         The calculator processes the values you enter in your browser.
         BoatCostGuide does not send those values to its server or to external
         services, store them in cookies or local storage, or require an account.
-        Your entries reset when you reload the page.
+        Your entries reset when you reload the page. If you choose to transfer a
+        scenario, selected entries are held temporarily in memory and loaded
+        only when you choose to import them. They are not placed in the URL.
+        Downloaded CSV files are generated on your device.
       </p>
       <h2>Site delivery</h2>
       <p>

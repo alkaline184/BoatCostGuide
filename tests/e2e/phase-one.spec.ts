@@ -55,7 +55,7 @@ test("responsive navigation, skip link and keyboard input work", async ({
     await menu.click();
     await page
       .getByRole("navigation", { name: "Mobile" })
-      .getByRole("link", { name: "Calculator" })
+      .getByRole("link", { name: "Calculator", exact: true })
       .click();
     await expect(page.getByRole("navigation", { name: "Mobile" })).toBeHidden();
     await expect(page).toHaveURL(/#calculator$/);
@@ -120,7 +120,7 @@ test("robots and sitemap advertise exactly the canonical public routes", async (
   expect(
     Array.from(xml.matchAll(/<loc>(.*?)<\/loc>/g), (match) => match[1]),
   ).toEqual(Object.keys(pages).map((path) => new URL(path, site.url).href));
-  expect((await request.get("/boat-loan-calculator")).status()).toBe(404);
+  expect((await request.get("/boat-refinance-calculator")).status()).toBe(404);
 });
 
 test("homepage fits the viewport and captures a production screenshot", async ({

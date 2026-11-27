@@ -7,3 +7,5 @@ The canonical origin is `https://boatcostguide.com`. Keep public metadata, the s
 Give future tools distinct jobs and substantive examples before indexing them. A dedicated payment calculator should answer loan-specific questions with a fuller schedule and comparisons. An ownership calculator should help estimate expense categories and distinguish annual budgeting from economic costs. Avoid publishing pages that repeat the homepage with a different boat type in the title.
 
 After launch, submit the canonical sitemap via Search Console. Use indexing, engagement and available field performance evidence to prioritize improvements. Verify title and content changes against real search intent.
+
+Phase 2 gives fixed-rate payment and amortization intent to the dedicated loan calculator. The homepage targets broader budgeting and ownership planning. Affordability, ownership cost and payoff calculations have distinct canonical routes, preview-aware indexing, server-rendered copy, breadcrumbs, and reciprocal links. Amortization is part of the loan route.

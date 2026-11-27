@@ -1,6 +1,6 @@
 # BoatCostGuide
 
-BoatCostGuide is an independent financial planning site for boat buyers and owners in the United States. The Phase 1 homepage models fixed-rate boat payments and recurring ownership expenses in USD. It includes a buying guide, FAQ, public methodology, and privacy and terms pages.
+BoatCostGuide is an independent financial planning site for boat buyers and owners in the United States. The homepage introduces four dedicated tools for loan payments and amortization, affordability, ownership costs and early payoff. All estimates use USD. The site includes original guides and a public methodology.
 
 ## Run locally
 
@@ -9,10 +9,10 @@ Use Node.js 22.19 or newer within the Node 22 LTS line and npm.
 ```sh
 nvm use
 npm ci
-npm run dev
+npm run dev -- --port 3005
 ```
 
-Open [localhost:3000](http://localhost:3000). Phase 1 requires no environment variables or service credentials.
+Open [localhost:3005](http://localhost:3005). The application requires no environment variables or service credentials.
 
 ## Scripts
 
@@ -28,7 +28,7 @@ Open [localhost:3000](http://localhost:3000). Phase 1 requires no environment va
 | `npm test`             | Run Vitest finance and input tests                        |
 | `npm run test:e2e`     | Start the built app on port 3100 and test with Playwright |
 
-For browser tests, run `npx playwright install chromium`, then `npm run build` and `npm run test:e2e`. If Chrome is already installed, set `PLAYWRIGHT_CHANNEL=chrome` to use it. Tests cover desktop, tablet and mobile Chromium profiles, with homepage screenshots under `test-results`.
+For browser tests, run `npx playwright install chromium`, then `npm run build` and `npm run test:e2e`. If Chrome is already installed, set `PLAYWRIGHT_CHANNEL=chrome` to use it. Tests cover desktop, tablet and mobile Chromium profiles, with homepage and calculator screenshots under `test-results`.
 
 ## Technology and layout
 
@@ -36,9 +36,7 @@ Next.js App Router, React, strict TypeScript, Tailwind CSS, Lucide icons and loc
 
 ## Financial methodology
 
-Financed principal equals price minus the down payment. The fixed-rate loan payment discounts an equal monthly payment stream at the nominal annual interest rate divided by 12. Zero interest divides principal by the number of payments. Monthly cash outflow adds the loan payment and user-entered operating expenses. Annual cash outflow multiplies that sum by 12 during repayment. See the [public methodology source](src/app/methodology/page.tsx) for formulas and exclusions.
-
-The calculator uses illustrative inputs and whole-year terms. It does not model lender APR, fees, taxes automatically, early payoff, seasonal timing, resale, depreciation or affordability underwriting. Loan and expense quotes should come from the buyer’s own sources.
+All four tools share a fixed-rate monthly loan model. See the [financial methodology](docs/FINANCIAL-METHODOLOGY.md) for examples, equations, rounding and exclusions. CI runs formatting, lint, type checking, unit tests, production build and Chromium end-to-end checks with read-only repository permissions.
 
 ## Deployment and next phase
 

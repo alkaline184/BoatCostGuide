@@ -32,3 +32,7 @@ Phase 1 documents the configuration. Live behavior can be verified after the own
 ## Owner inputs before public launch
 
 Confirm the operating party’s legal name and a verified public support or privacy contact. Have the owner review the privacy policy and terms for the final hosting setup, provider access and log handling, and add any applicable policy dates and required disclosures. Confirm commercial hosting arrangements, domain ownership, certificate coverage and deployment protection before connecting the project. After launch, verify the public sitemap, temporary deployment index controls and first-hop redirects.
+
+## CI
+
+GitHub Actions uses Node 22 and read-only repository permissions. It runs npm ci, formatting, lint, TypeScript, unit tests, production build and Chromium tests on pushes to main and feature branches and on pull requests. Production release and domain changes remain separate.
