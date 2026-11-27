@@ -1,11 +1,12 @@
 # Roadmap
 
-## Phase 2
+## Implemented
 
-Build the dedicated boat loan calculator with monthly amortization, configurable terms in months and clearer purchase fee handling. Add an affordability calculator that derives a price range from a user-chosen budget, and build a category-based ownership cost calculator. Publish supporting financing and operating-budget guides with cited inputs and original scenario examples.
+- Phase 1 delivered the homepage estimator, educational content, shared layout, metadata and hosting documentation.
+- Phase 2 delivered dedicated loan, affordability, ownership cost and payoff calculators. Amortization is available within the loan and payoff tools.
 
-## Subsequent phases
+## Recommended next phase
 
-Extend financing with amortization, early payoff, refinance and jet ski loan tools. Consider fuel and insurance estimates, side-by-side boat comparison, financing research and a rates resource when evidence is available. Build the guides collection once several substantial guides exist. Consider category-specific ownership resources for pontoon, wake, center console, bass, bowrider, cabin cruiser, sailboat and personal watercraft buyers where each answer is meaningfully distinct.
+Build refinance comparisons using existing balance, remaining term, replacement rate and upfront or financed fees. Show monthly savings, break-even and full-horizon comparison with explicit assumptions. Publish supporting financing guides and add a dedicated jet ski loan resource only if it answers materially different purchase questions.
 
-Introduce referral placements only after validating the visitor value, partner terms and disclosure language.
+Consider fuel, insurance and boat comparison experiences when they offer distinct value. Add specialty ownership guides with sourced examples and verified operational context. Introduce referral placements only after validating visitor utility, commercial terms and disclosures.

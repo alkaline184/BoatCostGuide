@@ -1,3 +1,4 @@
+import { calculatorPaths, calculators } from "@/config/calculators";
 import Link from "next/link";
 import { MobileNavigation } from "./mobile-navigation";
 
@@ -6,6 +7,11 @@ const mainLinks = [
   ["/#guides", "Guides"],
   ["/about", "About"],
 ];
+
+const calculatorLinks = calculatorPaths.map((path) => [
+  path,
+  calculators[path].name,
+]);
 
 function Brand() {
   return (
@@ -27,6 +33,11 @@ export function Header() {
       <div className="container header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Main">
+          <MobileNavigation
+            links={calculatorLinks}
+            label="Calculators"
+            navigationLabel="Calculators"
+          />
           {mainLinks.map(([href, label]) => (
             <Link key={href} href={href}>
               {label}
@@ -36,7 +47,7 @@ export function Header() {
         <Link className="button header-cta" href="/#calculator">
           Calculate costs
         </Link>
-        <MobileNavigation links={mainLinks} />
+        <MobileNavigation links={[...mainLinks, ...calculatorLinks]} />
       </div>
     </header>
   );
@@ -53,7 +64,11 @@ export function Footer() {
           </div>
           <nav aria-label="Footer tools">
             <h2>Explore</h2>
-            <Link href="/#calculator">Boat cost calculator</Link>
+            {calculatorLinks.map(([href, label]) => (
+              <Link key={href} href={href}>
+                {label}
+              </Link>
+            ))}
             <Link href="/#guides">Boat ownership guide</Link>
             <Link href="/methodology">Methodology</Link>
           </nav>

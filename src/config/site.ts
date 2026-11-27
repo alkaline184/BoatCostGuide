@@ -1,3 +1,5 @@
+import { calculators } from "./calculators";
+
 export const site = {
   name: "BoatCostGuide",
   url: "https://boatcostguide.com",
@@ -8,8 +10,9 @@ export const site = {
 } as const;
 
 export const pages = {
+  ...calculators,
   "/": {
-    title: "BoatCostGuide — Boat Loan Calculator & Ownership Costs",
+    title: "BoatCostGuide — Plan the Cost of Buying & Owning a Boat",
     description: site.description,
   },
   "/about": {

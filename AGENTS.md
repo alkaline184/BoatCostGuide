@@ -9,8 +9,9 @@
 ## Architecture
 
 - Keep route content and metadata server-rendered by default. Reserve client components for interactive features.
+- Keep scenario transfers explicit, client-only and ephemeral. Validate specific inputs in the receiving tool.
 - Keep finance functions deterministic and independent of React, validation shared, and formatting at the display boundary.
-- Phase 1 runs without credentials, accounts, a database, external data, tracking or referral integrations.
+- The application runs without credentials, accounts, a database, external data, tracking or referral integrations.
 
 ## Financial standards
 

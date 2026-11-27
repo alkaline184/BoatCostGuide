@@ -1,3 +1,4 @@
+import { fixedLoan, requireChoice } from "./loan";
 import {
   validateBoatCost,
   type BoatCostInput,
@@ -18,6 +19,7 @@ export function downPaymentAmount(
   payment: number,
   mode: DownPaymentMode,
 ): number {
+  requireChoice(mode, ["amount", "percent"], "down payment unit");
   return mode === "percent" ? price * (payment / 100) : payment;
 }
 
@@ -33,16 +35,8 @@ export function calculateBoatCost(input: BoatCostInput) {
   const principal =
     input.price -
     downPaymentAmount(input.price, input.downPayment, input.downPaymentMode);
-  const payments = input.years * 12;
-  const monthlyRate = input.annualRate / 1200;
-  // Avoid cancellation for rates close to zero.
-  const monthlyLoan =
-    monthlyRate === 0
-      ? principal / payments
-      : principal *
-        (monthlyRate / -Math.expm1(-payments * Math.log1p(monthlyRate)));
-  const scheduledPayments =
-    monthlyRate === 0 ? principal : monthlyLoan * payments;
+  const loan = fixedLoan(principal, input.annualRate, input.years * 12);
+  const monthlyLoan = loan.monthly;
   const monthlyTotal = monthlyLoan + input.operating;
 
   return {
@@ -51,7 +45,7 @@ export function calculateBoatCost(input: BoatCostInput) {
     monthlyOperating: input.operating,
     monthlyTotal,
     annualTotal: monthlyTotal * 12,
-    totalInterest: Math.max(0, scheduledPayments - principal),
-    scheduledPayments,
+    totalInterest: loan.interest,
+    scheduledPayments: loan.total,
   };
 }

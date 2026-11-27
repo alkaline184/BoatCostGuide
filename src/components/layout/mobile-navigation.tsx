@@ -3,7 +3,15 @@
 import Link from "next/link";
 import { useRef } from "react";
 
-export function MobileNavigation({ links }: { links: string[][] }) {
+export function MobileNavigation({
+  links,
+  label = "Menu",
+  navigationLabel = "Mobile",
+}: {
+  links: string[][];
+  label?: string;
+  navigationLabel?: string;
+}) {
   const menu = useRef<HTMLDetailsElement>(null);
 
   return (
@@ -17,8 +25,8 @@ export function MobileNavigation({ links }: { links: string[][] }) {
         }
       }}
     >
-      <summary>Menu</summary>
-      <nav aria-label="Mobile">
+      <summary>{label}</summary>
+      <nav aria-label={navigationLabel}>
         {links.map(([href, label]) => (
           <Link
             key={href}

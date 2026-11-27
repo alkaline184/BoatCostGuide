@@ -1,3 +1,4 @@
+import { CalculatorDirectory } from "@/components/layout/calculator-page";
 import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, Check, ChevronDown } from "lucide-react";
@@ -72,6 +73,12 @@ export default function Home() {
           <BoatCostCalculator />
         </div>
       </div>
+      <section id="calculators" className="section">
+        <div className="container">
+          <h2>Boating calculators</h2>
+          <CalculatorDirectory />
+        </div>
+      </section>
       <section id="guides" className="section">
         <div className="container editorial-grid">
           <div>
