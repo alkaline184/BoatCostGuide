@@ -1,12 +1,12 @@
 # Roadmap
 
-## Implemented
+Phase 1 delivered the introductory estimator. Phase 2 delivered dedicated loan, affordability, ownership and payoff tools. Phase 3A puts boat type discovery first, documents source feasibility and builds local model/comparison prototypes.
 
-- Phase 1 delivered the homepage estimator, educational content, shared layout, metadata and hosting documentation.
-- Phase 2 delivered dedicated loan, affordability, ownership cost and payoff calculators. Amortization is available within the loan and payoff tools.
+## Phase 3B
 
-## Recommended next phase
+1. Obtain owner-approved commercial and indexing grants for the first supplier trial and a short list of US OEM images. Confirm source terms with the providers and record granted fields, derivative/caching rights, credit and withdrawal process.
+2. Evaluate 12–20 exact model-year variants across two or three categories. Cross-check manufacturer/model/year/trim, engine and three core specifications against official sources. Measure year and brand coverage, missing-data rates and update behavior before selecting a provider.
+3. Publish a small static pilot after editorial and license review. Add a real curated catalog search, explain empty results clearly, publish research pages that meet the completeness standard and add comparison for reviewed boats. Keep buyer costs locally entered.
+4. Add official recall citations after applicability checks. Expand coverage after measuring correction workload and consumer engagement. Evaluate a database when approved volumes and update frequency warrant it.
 
-Build refinance comparisons using existing balance, remaining term, replacement rate and upfront or financed fees. Show monthly savings, break-even and full-horizon comparison with explicit assumptions. Publish supporting financing guides and add a dedicated jet ski loan resource only if it answers materially different purchase questions.
-
-Consider fuel, insurance and boat comparison experiences when they offer distinct value. Add specialty ownership guides with sourced examples and verified operational context. Introduce referral placements only after validating visitor utility, commercial terms and disclosures.
+See [provider research](MARINE-DATA-RESEARCH.md), [manufacturer feasibility](MANUFACTURER-DATA.md), [marine architecture](MARINE-ARCHITECTURE.md) and [visual assets](VISUAL-ASSETS.md).

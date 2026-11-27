@@ -22,10 +22,18 @@ export default defineConfig({
       use: { ...devices["iPhone 13"], defaultBrowserType: "chromium" },
     },
   ],
-  webServer: {
-    command: "npm run start -- --hostname 127.0.0.1 --port 3100",
-    url: baseURL,
-    reuseExistingServer: false,
-    timeout: 30_000,
-  },
+  webServer: [
+    {
+      command: "npm run start -- --hostname 127.0.0.1 --port 3100",
+      url: baseURL,
+      reuseExistingServer: false,
+      timeout: 30_000,
+    },
+    {
+      command: "npm run dev -- --hostname 127.0.0.1 --port 3101",
+      url: "http://127.0.0.1:3101/research-preview/model",
+      reuseExistingServer: false,
+      timeout: 60_000,
+    },
+  ],
 });

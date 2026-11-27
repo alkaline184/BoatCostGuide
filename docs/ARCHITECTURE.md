@@ -18,3 +18,5 @@ The four calculator routes prerender page content and hydrate route-specific inp
 Transfers use a single in-memory slot addressed to the destination route. The destination imports only its supported numeric fields and runs its validators before presenting results. Reloading clears values. A loan-to-ownership transfer shares price, down payment, charges and rate/term. Ownership uses its own upfront charge policy and does not carry trade-in equity or financed charge treatment.
 
 Phase 2 starts from merged main commit `e3ca814`, which includes Phase 1 PR #1.
+
+Phase 3A starts from `daf39f6` on main, which includes Phase 2 PR #2. Its production homepage uses a static editorial category list. Development-only model and comparison components consume the provider-independent contract. See [marine architecture](MARINE-ARCHITECTURE.md) for schema and publication gates.

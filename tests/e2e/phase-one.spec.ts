@@ -41,7 +41,9 @@ test("responsive navigation, skip link and keyboard input work", async ({
   await page.keyboard.press("Enter");
   await expect(page.getByRole("main")).toBeFocused();
   await page.keyboard.press("Tab");
-  await expect(page.getByLabel("Boat purchase price")).toBeFocused();
+  await expect(
+    page.getByRole("link", { name: "Explore boat types", exact: true }).first(),
+  ).toBeFocused();
 
   if (testInfo.project.name === "mobile") {
     const menu = page.getByText("Menu", { exact: true });
@@ -128,9 +130,20 @@ test("homepage fits the viewport and captures a production screenshot", async ({
 }, testInfo) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    /Your dream boat.*Know the real cost/,
+    /Find your perfect boat.*Know what it really costs/,
   );
   await page.evaluate(() => document.fonts.ready);
+  const images = page.locator(".discovery-hero img, .boat-category img");
+  await expect(images).toHaveCount(9);
+  for (const image of await images.all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() =>
+        image.evaluate((node) => (node as HTMLImageElement).naturalWidth),
+      )
+      .toBeGreaterThan(0);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(page.viewportSize()!.width);

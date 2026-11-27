@@ -5,14 +5,14 @@ export const site = {
   url: "https://boatcostguide.com",
   tagline: "Know the true cost of owning a boat.",
   description:
-    "Calculate boat loan payments and estimate the monthly and annual cash outflow of owning a boat. Free, independent boating financial tools.",
+    "Explore recreational boat types, read buying guides, and use free calculators to plan boat financing and the cost of ownership.",
   socialImage: "/social.png",
 } as const;
 
 export const pages = {
   ...calculators,
   "/": {
-    title: "BoatCostGuide — Plan the Cost of Buying & Owning a Boat",
+    title: "BoatCostGuide — Explore Boats & Plan Ownership Costs",
     description: site.description,
   },
   "/about": {

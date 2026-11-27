@@ -3,8 +3,9 @@ import Link from "next/link";
 import { MobileNavigation } from "./mobile-navigation";
 
 const mainLinks = [
+  ["/#explore", "Explore boats"],
   ["/#calculator", "Calculator"],
-  ["/#guides", "Guides"],
+  ["/#guides", "Buying guides"],
   ["/about", "About"],
 ];
 
@@ -33,16 +34,19 @@ export function Header() {
       <div className="container header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Main">
+          <Link href="/#explore">Explore boats</Link>
           <MobileNavigation
-            links={calculatorLinks}
+            links={[["/#calculator", "Quick estimate"], ...calculatorLinks]}
             label="Calculators"
             navigationLabel="Calculators"
           />
-          {mainLinks.map(([href, label]) => (
-            <Link key={href} href={href}>
-              {label}
-            </Link>
-          ))}
+          {mainLinks
+            .filter(([href]) => href !== "/#calculator" && href !== "/#explore")
+            .map(([href, label]) => (
+              <Link key={href} href={href}>
+                {label}
+              </Link>
+            ))}
         </nav>
         <Link className="button header-cta" href="/#calculator">
           Calculate costs
@@ -60,7 +64,9 @@ export function Footer() {
         <div className="footer-main">
           <div>
             <Brand />
-            <p>Independent boating financial tools for US buyers and owners.</p>
+            <p>
+              Boat research and ownership planning for US buyers and owners.
+            </p>
           </div>
           <nav aria-label="Footer tools">
             <h2>Explore</h2>
@@ -69,7 +75,8 @@ export function Footer() {
                 {label}
               </Link>
             ))}
-            <Link href="/#guides">Boat ownership guide</Link>
+            <Link href="/#explore">Explore boat types</Link>
+            <Link href="/#guides">Buying guides</Link>
             <Link href="/methodology">Methodology</Link>
           </nav>
           <nav aria-label="Footer information">
