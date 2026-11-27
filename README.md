@@ -1,6 +1,6 @@
 # BoatCostGuide
 
-BoatCostGuide is an independent financial planning site for boat buyers and owners in the United States. The homepage introduces four dedicated tools for loan payments and amortization, affordability, ownership costs and early payoff. All estimates use USD. The site includes original guides and a public methodology.
+BoatCostGuide is an independent boat research and ownership planning site for boat buyers and owners in the United States. The homepage introduces eight boat types and four dedicated tools for loan payments and amortization, affordability, ownership costs and early payoff. All estimates use USD. The site includes original guides and a public methodology.
 
 ## Run locally
 
@@ -16,19 +16,25 @@ Open [localhost:3005](http://localhost:3005). The application requires no enviro
 
 ## Scripts
 
-| Command                | Purpose                                                   |
-| ---------------------- | --------------------------------------------------------- |
-| `npm run dev`          | Start the development server                              |
-| `npm run build`        | Compile and prerender production routes                   |
-| `npm start`            | Serve the existing production build                       |
-| `npm run lint`         | Run ESLint                                                |
-| `npm run typecheck`    | Check strict TypeScript                                   |
-| `npm run format`       | Format source and documentation                           |
-| `npm run format:check` | Check formatting                                          |
-| `npm test`             | Run Vitest finance and input tests                        |
-| `npm run test:e2e`     | Start the built app on port 3100 and test with Playwright |
+| Command                | Purpose                                                                |
+| ---------------------- | ---------------------------------------------------------------------- |
+| `npm run dev`          | Start the development server                                           |
+| `npm run build`        | Compile and prerender production routes                                |
+| `npm start`            | Serve the existing production build                                    |
+| `npm run lint`         | Run ESLint                                                             |
+| `npm run typecheck`    | Check strict TypeScript                                                |
+| `npm run format`       | Format source and documentation                                        |
+| `npm run format:check` | Check formatting                                                       |
+| `npm test`             | Run Vitest finance and input tests                                     |
+| `npm run test:e2e`     | Test the production app on port 3100 and local prototypes on port 3101 |
 
 For browser tests, run `npx playwright install chromium`, then `npm run build` and `npm run test:e2e`. If Chrome is already installed, set `PLAYWRIGHT_CHANNEL=chrome` to use it. Tests cover desktop, tablet and mobile Chromium profiles, with homepage and calculator screenshots under `test-results`.
+
+## Research prototypes
+
+Start the production preview using `npm run build` and `npm start -- --port 3005`. To review the fictional prototypes separately, run `npm run dev -- --port 3006` and open [model detail](http://localhost:3006/research-preview/model) or [comparison](http://localhost:3006/research-preview/compare). They return 404 in production.
+
+See [marine data research](docs/MARINE-DATA-RESEARCH.md), [manufacturer feasibility](docs/MANUFACTURER-DATA.md), [catalog architecture](docs/MARINE-ARCHITECTURE.md) and [visual assets](docs/VISUAL-ASSETS.md).
 
 ## Technology and layout
 

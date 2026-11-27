@@ -1,0 +1,31 @@
+# Marine catalog architecture
+
+## Model and ingestion
+
+`Manufacturer → BoatModel → ModelYear → BoatVariant` separates the marque, family, US year and trim/engine combination. The normalized TypeScript contract is in [catalog.ts](../src/lib/marine/catalog.ts). Category keys are editorial IDs. Source identity and model year are required on each field observation, including when its value is null. Non-model entities such as manufacturers retain their own provenance, with year applied through relationships. Preserve original units and choose canonical display conversions at the presentation boundary. Do not automatically equate approximate dry weight, tested weight, loaded weight or weight without engines. Store supplier identifiers independently of stable public slugs. Importers should add contextual engine performance observations with test conditions before publishing any fuel-burn claims.
+
+A provider adapter returns normalized records or cursor pages. Implement one adapter per authorized source as a server-side ingestion job. Validate unknown JSON at the adapter boundary, normalize only documented values, resolve aliases with editorial review, and preserve provenance and per-field license. Match USCG observations on exact scope and treat informal identity matches as candidates. Check model-year identity, publication rights, validity dates and completeness before data leaves staging. Cache, update, purge and attribute each source according to its grant. Use a per-asset allowlist for signed media rights and host only approved derivatives. Keep credentials, raw supplier extracts and internal notes outside frontend bundles and public files.
+
+MSRP, dealer asking prices, documented actual sales and estimated market values are distinct observations. Each carries date, USD, source, model year and package inclusion. Any starting or regional quote needs its scope in the editorial layer. Buyer-entered price and expense assumptions are separate local scenario state. The prototype uses the existing payment and remaining-balance utilities and counts down payment, up to 60 scheduled payments, and 60 months of operations. An estimate excludes resale and acquisition charges, as labeled.
+
+### Storage choice
+
+Use reviewed static typed data for an initial catalog of 12–20 variants with sparse updates, if rights permit persistent storage with the static artifact. Benefits are audited diffs, no database overhead and predictable caching. Keep supplier payloads out of Git. Use a server-side TTL cache or licensed runtime lookup for sources whose terms forbid static storage. Consider Supabase Postgres only after authorized coverage, relational joins, editor concurrency, search or frequent delta refreshes make static review operationally expensive. Proposed tables mirror the contracts and join provider IDs, licenses, observations, asset grants and recall verification history. No database is provisioned.
+
+## Future product routes and indexing gates
+
+| Route                           | Minimum original value                                                                                                                                                        |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/boats`                        | Real searchable/filterable curated inventory, source and coverage expectations.                                                                                               |
+| `/boats/[manufacturer]`         | US brand context and sufficient verified models to compare, with explicit model-year coverage.                                                                                |
+| `/boats/[manufacturer]/[model]` | Canonical model URL with verified US year/trim selector, sources and a useful ownership scenario. Index a year separately only if substance merits a separate URL.            |
+| `/boat-types/[type]`            | Original advice, fit and trade-offs, plus a selection of verified examples.                                                                                                   |
+| `/compare`                      | Shareable identities for licensed boats, normalized specifications, and clearly distinct local financial assumptions. Keep arbitrary comparison combinations out of indexing. |
+| `/boat-finder`                  | Explain recommendations and supporting coverage. User filters and intermediate result pages should stay out of the sitemap.                                                   |
+| `/boat-recalls`                 | Verified official campaign scope with update/freshness information and links to the authority.                                                                                |
+| `/hin-decoder`                  | Establish coverage and privacy rules for lookups. Avoid indexing identifiers or making claims about ownership history.                                                        |
+| `/guides/[slug]`                | Original reported or sourced decision guidance with an editorial owner and review date.                                                                                       |
+
+A model page must have a verified identity, year and US configuration, source links, verified length and two other useful core specifications, explicit missing fields and primary-source corroboration for key claims. It needs unique buyer-facing analysis (use cases, equipment and ownership implications, or meaningful alternatives) and a reviewed set of license/credit details. Pricing and model photography are optional and only included where sufficient rights and provenance exist. Remove expired or withdrawn observations and deindex pages that fall below the standard. Publish only reviewed canonical URLs to the sitemap. Existing calculators stay at their original canonical URLs.
+
+The Phase 3A prototype routes under `/research-preview` are dev-only, explicitly labeled fictional and noindex. Production requests return 404 and the canonical sitemap excludes both paths. Model images are generated category examples, and real pricing and recall claims are absent. Favorites and comparison interactions are ephemeral.
