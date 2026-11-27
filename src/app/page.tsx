@@ -1,7 +1,8 @@
+import { boatTypes } from "@/content/boat-types";
 import { CalculatorDirectory } from "@/components/layout/calculator-page";
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, Check, ChevronDown } from "lucide-react";
+import { BookOpen, ChevronDown, Compass, Gauge, Wallet } from "lucide-react";
 import { BoatCostCalculator } from "@/components/calculators/boat-cost-calculator";
 import { site } from "@/config/site";
 import { expenses, questions } from "@/content/guides";
@@ -40,50 +41,151 @@ export default function Home() {
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="hero">
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <h1>
-              Your dream boat.
-              <br />
-              <span>Know the real cost.</span>
-            </h1>
-            <p>
-              Calculate your boat loan payments, uncover the true cost of
-              ownership and find out how much boat you can comfortably afford —
-              before you buy.
-            </p>
-            <ul className="trust-list">
-              {["Free to use", "Independent", "No sign-up"].map((item) => (
-                <li key={item}>
-                  <Check size={16} aria-hidden="true" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="hero-image">
-              <Image
-                src="/open-water.webp"
-                alt=""
-                fill
-                sizes="(max-width: 900px) 1px, 460px"
-              />
-            </div>
+      <section className="discovery-hero" aria-labelledby="home-title">
+        <Image
+          src="/marine/hero.webp"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="discovery-hero-image"
+        />
+        <div className="container discovery-hero-content">
+          <p className="editorial-kicker">Boat research &amp; ownership</p>
+          <h1 id="home-title">
+            Find your perfect boat. <em>Know what it really costs.</em>
+          </h1>
+          <p>
+            Explore boat types, understand what fits your time on the water, and
+            build a budget for the seasons ahead.
+          </p>
+          <div className="discovery-actions">
+            <Link href="/#explore" className="button discovery-primary">
+              Explore boat types
+            </Link>
+            <Link href="/#calculators" className="button discovery-secondary">
+              Plan your budget
+            </Link>
           </div>
-          <BoatCostCalculator />
-        </div>
-      </div>
-      <section id="calculators" className="section">
-        <div className="container">
-          <h2>Boating calculators</h2>
-          <CalculatorDirectory />
         </div>
       </section>
-      <section id="guides" className="section">
+      <section id="explore" className="section discovery-section">
+        <div className="container">
+          <div className="discovery-section-head">
+            <div>
+              <p className="editorial-kicker">Explore boats</p>
+              <h2>Find your kind of boating.</h2>
+            </div>
+            <p>
+              Open a boat type to see what to look for and what to budget for.
+            </p>
+          </div>
+          <ul className="boat-category-grid">
+            {boatTypes.map(({ id, name, use, detail, image }) => (
+              <li key={id}>
+                <details className="boat-category">
+                  <summary>
+                    <div className="boat-category-image">
+                      <Image
+                        src={image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 520px) 46vw, (max-width: 850px) 45vw, 24vw"
+                      />
+                    </div>
+                    <div className="boat-category-title">
+                      <h3>{name}</h3>
+                      <ChevronDown size={18} aria-hidden="true" />
+                      <span>{use}</span>
+                    </div>
+                  </summary>
+                  <p>{detail}</p>
+                </details>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="section ownership-feature">
+        <div className="container editorial-grid">
+          <div>
+            <p className="editorial-kicker">Ownership intelligence</p>
+            <h2>
+              Picture the boat.
+              <br />
+              Price the years ahead.
+            </h2>
+            <p>
+              How you use a boat shapes what you spend on it. Start with a
+              shortlist, then turn your quotes and expected use into a plan.
+            </p>
+            <Link
+              href="/boat-ownership-cost-calculator"
+              className="button discovery-primary"
+            >
+              Estimate ownership costs
+            </Link>
+          </div>
+          <ol className="ownership-steps">
+            <li>
+              <Compass aria-hidden="true" />
+              <div>
+                <h3>Start with where you boat</h3>
+                <p>
+                  Think about water conditions, passengers and activities before
+                  narrowing down hull types.
+                </p>
+              </div>
+            </li>
+            <li>
+              <Gauge aria-hidden="true" />
+              <div>
+                <h3>Check the specs that affect your costs</h3>
+                <p>
+                  Confirm the exact engine, loaded weight and dimensions to get
+                  meaningful fuel, storage and towing estimates.
+                </p>
+              </div>
+            </li>
+            <li>
+              <Wallet aria-hidden="true" />
+              <div>
+                <h3>Build a budget that lasts</h3>
+                <p>
+                  Put operating costs alongside the financing payment, then test
+                  what happens if you sell earlier than planned.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="calculators" className="section discovery-section">
+        <div className="container">
+          <div className="discovery-section-head">
+            <div>
+              <p className="editorial-kicker">Budget tools</p>
+              <h2>Run the numbers.</h2>
+            </div>
+            <p>
+              Use your own quotes and assumptions. The calculators run in your
+              browser.
+            </p>
+          </div>
+          <CalculatorDirectory />
+          <div className="quick-estimate">
+            <h3 className="quick-estimate-title">
+              Start with a quick estimate
+            </h3>
+            <BoatCostCalculator />
+          </div>
+        </div>
+      </section>
+      <section id="guides" className="section buying-editorial">
         <div className="container editorial-grid">
           <div>
             <p className="section-label">
-              <BookOpen size={17} aria-hidden="true" /> Boat ownership guide
+              <BookOpen size={17} aria-hidden="true" /> Buying guides
             </p>
             <h2>Budget beyond the boat price.</h2>
             <p className="section-intro">
