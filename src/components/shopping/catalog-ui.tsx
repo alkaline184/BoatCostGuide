@@ -1,3 +1,6 @@
+import { BoatScene } from "@/components/marine/boat-diagrams";
+import { diagramFor } from "@/lib/marine/illustrations";
+import type { Source } from "@/lib/marine/catalog";
 import Image from "next/image";
 import Link from "next/link";
 import { money } from "@/lib/formatting/money";
@@ -25,12 +28,19 @@ export function CatalogImage({
     ({ source, value }) =>
       value?.role === "model-photo" && canPublish(source, asOf, true),
   )?.value;
+  if (!image)
+    return (
+      <figure className="catalog-schematic">
+        <BoatScene boats={[diagramFor(record)]} />
+        <figcaption>Category illustration</figcaption>
+      </figure>
+    );
   return (
     <figure className="catalog-photo">
       <div>
         <Image
-          src={image?.path ?? categoryMap[record.model.category].image}
-          alt={image?.alt ?? ""}
+          src={image.path}
+          alt={image.alt}
           fill
           sizes="(max-width: 640px) 90vw, (max-width: 1000px) 45vw, 35vw"
           loading={eager ? "eager" : "lazy"}
@@ -107,33 +117,68 @@ export function specRows(record: ShoppingRecord) {
   const local = (item: typeof s.storageCapacity) =>
     item ? formatObservation(item) : "Unavailable";
   return [
-    ["Overall length", formatObservation(s.length)],
+    ["Overall length", formatObservation(s.length), s.length.source],
     [
       "Beam or width",
       formatObservation(s.beam) +
         (s.widthBasis?.value ? ` (${s.widthBasis.value.toLowerCase()})` : ""),
+      s.beam.source,
     ],
-    ["Draft", formatObservation(s.draft)],
-    ["Dry weight", formatObservation(s.dryWeight)],
-    ["Weight definition", s.dryWeightBasis?.value ?? "Unavailable"],
-    ["Rated capacity", formatObservation(s.passengers)],
-    ["Fuel capacity", formatObservation(s.fuelCapacity)],
-    ["Storage capacity", local(s.storageCapacity)],
-    ["Hull material", s.hullMaterial?.value ?? "Unavailable"],
-    ["Propulsion", engine?.type ?? "Unavailable"],
-    ["Engine", engine?.name ?? "Unavailable"],
-    ["Engine count", engine?.count?.toString() ?? "Unavailable"],
+    ["Draft", formatObservation(s.draft), s.draft.source],
+    ["Dry weight", formatObservation(s.dryWeight), s.dryWeight.source],
+    [
+      "Weight definition",
+      s.dryWeightBasis?.value ?? "Unavailable",
+      s.dryWeightBasis?.source,
+    ],
+    ["Rated capacity", formatObservation(s.passengers), s.passengers.source],
+    ["Fuel capacity", formatObservation(s.fuelCapacity), s.fuelCapacity.source],
+    ["Storage capacity", local(s.storageCapacity), s.storageCapacity?.source],
+    [
+      "Hull material",
+      s.hullMaterial?.value ?? "Unavailable",
+      s.hullMaterial?.source,
+    ],
+    ["Propulsion", engine?.type ?? "Unavailable", s.engine.source],
+    ["Engine", engine?.name ?? "Unavailable", s.engine.source],
+    [
+      "Engine count",
+      engine?.count?.toString() ?? "Unavailable",
+      s.engine.source,
+    ],
     [
       "Installed power",
       engine?.totalPower
         ? `${engine.totalPower.amount} ${engine.totalPower.unit}`
         : "Unavailable",
+      s.engine.source,
     ],
     [
       "Displacement per engine",
       engine?.displacement
         ? `${engine.displacement.amount} ${engine.displacement.unit}`
         : "Unavailable",
+      s.engine.source,
     ],
   ] as const;
+}
+
+export function ClaimSource({
+  label,
+  source,
+}: {
+  label: string;
+  source?: Source;
+}) {
+  if (!source || !source.url.startsWith("https://")) return null;
+  return (
+    <a
+      className="catalog-source"
+      href={source.url}
+      aria-label={`Source for ${label}`}
+      title={`Checked ${source.retrievedAt}`}
+    >
+      Source
+    </a>
+  );
 }

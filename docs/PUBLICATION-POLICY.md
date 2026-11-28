@@ -1,0 +1,7 @@
+# Marine catalog publication
+
+The 50 verified variants are eligible for local research review. Publication requires a recorded commercial display, retention and indexable-use determination for every source included in a snapshot. An editor confirms US model year, exact trim, specification and price meaning, source date, and source attribution. Image permission is separate.
+
+The migration stores `discovered`, `extracted`, `pending_review`, `verified`, `approved`, `published`, `rejected` and `archived` states. A trusted maintainer records the rights decision and approval reference in `marine.source_documents`, then assigns the reviewed `approved_snapshot`, `approved_at`, and `approved_by` in `marine.catalog_projection`. The snapshot must be an exact match for the candidate projection and its JSON source licenses must independently pass the application validation. Promote the model, model year and variant together after reviewing a read-only preview of the candidate. Use a single administrative transaction for state changes. Public and authenticated clients receive SELECT on the filtered projection only.
+
+A changed candidate requires a new review. Expired or revoked rights, incomplete identity sources, and unpublished states remove the record from the SQL projection. `catalog/approved.json` is the fallback for installations without database configuration and is currently empty. Mirror any future approved snapshot there only after an independent publication review. The database import itself never grants rights or publishes records.

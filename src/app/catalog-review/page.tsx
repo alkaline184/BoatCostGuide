@@ -1,6 +1,5 @@
-import { headers } from "next/headers";
+import { requireLocalCatalogReview } from "@/lib/marine/local-review";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { ShoppingPage } from "@/components/shopping/page-shell";
 import { money } from "@/lib/formatting/money";
 import { publicationDate } from "@/lib/marine/catalog-server";
@@ -40,22 +39,7 @@ export default async function CatalogReview({
 }: {
   searchParams: Promise<{ brand?: string; year?: string }>;
 }) {
-  if (
-    process.env.NODE_ENV !== "development" ||
-    process.env.CATALOG_LOCAL_REVIEW !== "1"
-  )
-    notFound();
-  const request = await headers();
-  const forwarded = request.get("x-forwarded-for");
-  if (
-    !/^(localhost|127\.0\.0\.1|\[::1\])(:\d{1,5})?$/.test(
-      request.get("host") ?? "",
-    ) ||
-    (forwarded &&
-      !/^(127\.0\.0\.1|::1|::ffff:127\.0\.0\.1)$/.test(forwarded)) ||
-    request.get("sec-fetch-site") === "cross-site"
-  )
-    notFound();
+  await requireLocalCatalogReview();
   const today = publicationDate();
   const intake = await manufacturerReview(today);
   const params = await searchParams;

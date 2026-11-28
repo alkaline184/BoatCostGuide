@@ -1,9 +1,12 @@
+import { BoatFit } from "@/components/marine/boat-fit";
+import { DiagramControls } from "@/components/marine/boat-diagrams";
+import { diagramFor } from "@/lib/marine/illustrations";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ShoppingPage } from "@/components/shopping/page-shell";
 import {
   CatalogCard,
-  CatalogImage,
+  ClaimSource,
   specRows,
 } from "@/components/shopping/catalog-ui";
 import { ModelScenario } from "@/components/shopping/scenario";
@@ -98,7 +101,18 @@ export default async function Model({ params, searchParams }: Props) {
         <div className="catalog-model-info">
           <p className="catalog-price">
             {price ? money(price.amount) : "Starting price unavailable"}{" "}
-            {price && <small>{priceBasisLabel(price)}</small>}
+            {price && (
+              <small>
+                {priceBasisLabel(price)} · {price.observedAt}
+                <ClaimSource
+                  label="manufacturer price"
+                  source={
+                    record.variant.prices.find((entry) => entry.value === price)
+                      ?.source
+                  }
+                />
+              </small>
+            )}
           </p>
           {price?.includedItems.length ? (
             <p>Included in source price: {price.includedItems.join(", ")}.</p>
@@ -129,7 +143,7 @@ export default async function Model({ params, searchParams }: Props) {
             </p>
           )}
         </div>
-        <CatalogImage record={record} asOf={asOf} eager />
+        <DiagramControls boats={[diagramFor(record)]} />
       </div>
       {variants.length > 1 && (
         <nav aria-label="Model years and variants" className="catalog-variants">
@@ -152,16 +166,22 @@ export default async function Model({ params, searchParams }: Props) {
         <section>
           <h2>Specifications</h2>
           <dl className="research-specs">
-            {specRows(record).map(([label, value]) => (
+            {specRows(record).map(([label, value, source]) => (
               <div key={label}>
                 <dt>{label}</dt>
-                <dd>{value}</dd>
+                <dd>
+                  {value}
+                  {value !== "Unavailable" && (
+                    <ClaimSource label={label} source={source} />
+                  )}
+                </dd>
               </div>
             ))}
           </dl>
         </section>
         <ModelScenario key={record.variant.id} price={currentPrice?.amount} />
       </div>
+      <BoatFit key={record.variant.id} boat={diagramFor(record)} />
       <section className="research-block">
         <h2>Buying considerations</h2>
         <p>{record.editorial}</p>

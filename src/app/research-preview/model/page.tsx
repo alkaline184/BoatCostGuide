@@ -16,6 +16,10 @@ export default async function ModelPreview() {
   const [record, ...similar] = fixtures;
   return (
     <>
+      <p className="research-notice">
+        Development preview. Boat names and specifications are fictional.
+        Financial results use your inputs.
+      </p>
       <div className="research-model-hero">
         <div>
           <p className="editorial-kicker">

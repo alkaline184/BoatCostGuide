@@ -5,8 +5,8 @@ import { pages, site } from "@/config/site";
 
 export const revalidate = 3600;
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const records = publicCatalog();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const records = await publicCatalog();
   const models = new Set(records.map(modelPath));
   const paths = new Set([...Object.keys(pages), ...models]);
   if (records.length) paths.add("/boats");

@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
+test.setTimeout(60_000);
+
 const review = "http://127.0.0.1:3101";
 const spark = "sea-doo-spark-2027-for-2-60-hp";
 const gti = "sea-doo-gti-2027-130";
@@ -16,6 +18,12 @@ test("real explorer filters, budgets and opens a comparison", async ({
   await expect(page.getByText("50 variants found")).toBeVisible();
   if (info.project.name !== "tablet")
     await page.screenshot({ path: info.outputPath("explorer.png") });
+  await expect(page.locator(".catalog-card")).toHaveCount(24);
+  const pagination = page.getByRole("navigation", {
+    name: "Boat results pages",
+  });
+  await pagination.getByRole("button", { name: "Next" }).click();
+  await expect(pagination.getByText("Page 2 of 3")).toBeVisible();
   await page.getByLabel("Search manufacturer or model").fill("Spark");
   await expect(page.getByText("3 variants found")).toBeVisible();
   await page.getByText("Filter boats", { exact: true }).click();
@@ -124,11 +132,56 @@ test("manufacturer expansion supports pontoon research and archived price isolat
   );
   await expect(page.getByText("Archived manufacturer base MSRP")).toBeVisible();
   await expect(page.getByLabel("Purchase price")).toHaveValue("");
-  for (const origin of ["", review]) {
-    const response = await request.get(origin + "/catalog-review");
-    expect(response.status()).toBe(404);
-    expect(response.headers()["x-robots-tag"]).toContain("noindex");
-  }
+  const dashboard = await request.get(review + "/catalog-review");
+  expect(dashboard.status()).toBe(200);
+  expect(dashboard.headers()["x-robots-tag"]).toContain("noindex");
+  expect((await request.get("/catalog-review")).status()).toBe(404);
+  expect(
+    (
+      await request.get(review + "/catalog-review", {
+        headers: { "Sec-Fetch-Site": "cross-site" },
+      })
+    ).status(),
+  ).toBe(404);
+  const publicSearch = await request.get("/api/boats");
+  expect((await publicSearch.json()).rows).toEqual([]);
   const production = await request.get("/boats/sun-tracker/bass-buggy-16-xl");
   expect(production.status()).toBe(404);
+});
+
+test("original marine diagrams and fit tools stay usable on real models", async ({
+  page,
+  request,
+}) => {
+  await page.goto(review + "/boats/sea-doo/spark");
+  const diagrams = page.getByRole("region", {
+    name: "Boat dimensions illustration",
+  });
+  await diagrams.getByLabel("View").selectOption("top");
+  await diagrams.getByLabel("Style").selectOption("blueprint");
+  await expect(
+    diagrams.getByRole("img", { name: "Top-down marine schematics" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Source for Overall length" }),
+  ).toHaveAttribute("href", /^https:/);
+  await page.getByLabel("Usable space length (in)").fill("40");
+  await page.getByLabel("Usable space width (in)").fill("120");
+  await expect(
+    page.getByRole("img", { name: "Scaled overhead storage footprint" }),
+  ).toBeVisible();
+  await expect(page.getByText(/exceeds the available space/)).toBeVisible();
+  await page.goto(review + "/compare?models=" + [spark, gti].join(","));
+  await page.getByLabel("Overlay profiles").check();
+  await expect(
+    page
+      .getByRole("region", { name: "Boat dimensions illustration" })
+      .getByRole("img"),
+  ).toBeVisible();
+  const gallery = await request.get(review + "/research-preview/illustrations");
+  expect(gallery.ok()).toBe(true);
+  expect(gallery.headers()["x-robots-tag"]).toContain("noindex");
+  expect((await request.get("/research-preview/illustrations")).status()).toBe(
+    404,
+  );
 });

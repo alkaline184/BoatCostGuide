@@ -33,3 +33,9 @@ The Phase 3A prototype routes under `/research-preview` are dev-only, explicitly
 ## Phase 3B shopping routes
 
 The approved static catalog is validated on the server and filtered through observation-level publication permissions. Development reads the independently compiled factual review catalog from disk. The explorer and comparison serialize only the catalog available to the current environment. Manufacturer and category pages need two distinct model families. Stale prices are excluded from estimates and filtering. Compare URLs contain at most three validated variant IDs. The shopping UI keeps financial assumptions in component state.
+
+## Independent PostgreSQL catalog
+
+The normalized Supabase migration keeps manufacturer identities, model years, variants, specification observations, price history, source rights, ingestion runs and illustration configuration in the private `marine` schema. The public projection is read-only and requires an unchanged reviewed snapshot, dated reviewer approval, published identity records and complete source rights. Next.js validates the projected record independently. See [Supabase setup](SUPABASE-SETUP.md), [data provenance](DATA-PROVENANCE.md) and [publication policy](PUBLICATION-POLICY.md).
+
+Explorer queries return up to 24 filtered variants per response. Model and category routes remain server-rendered. The current search handler filters publication-approved records in the Next.js server. At larger catalog sizes, use the existing indexed projection to push publication filters and pagination into PostgreSQL and avoid rereading complete public records on search requests.

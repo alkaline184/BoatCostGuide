@@ -35,3 +35,7 @@ Planning estimate for the existing pilot is three to six editorial hours per pri
 ## Phase 3B.2 update
 
 The earlier table records the original 21-variant pilot. The expanded result is 50 independently sourced US configurations, 38 current price observations, five archive price observations, and zero approved publications. See the [expansion audit](MANUFACTURER-EXPANSION.md) for the current completeness and cross-check denominators.
+
+The dedicated local database imported 50 variants from the baseline plus four editorial batches. Re-importing the same payload produced zero additions and zero changes. Existing trust decisions did not change. See [publication policy](PUBLICATION-POLICY.md).
+
+The local database contains 35 model families, 50 variants, 43 price observations and 401 specification observations, all with source documents. One timed local run took 160 ms for the initial transaction and 116 ms on replay. The anonymous Supabase API returned HTTP 200 and zero rows in a 322 ms cold smoke check. These timings are for the 50-variant pilot.

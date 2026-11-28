@@ -30,7 +30,7 @@ export default defineConfig({
       timeout: 30_000,
     },
     {
-      command: `npm run dev -- --hostname 127.0.0.1 --port 3101${process.env.PLAYWRIGHT_NEXT_WEBPACK ? " --webpack" : ""}`,
+      command: `CATALOG_LOCAL_REVIEW=1 npm run dev -- --hostname 127.0.0.1 --port 3101${process.env.PLAYWRIGHT_NEXT_WEBPACK ? " --webpack" : ""}`,
       url: "http://127.0.0.1:3101/research-preview/model",
       reuseExistingServer: false,
       timeout: 60_000,

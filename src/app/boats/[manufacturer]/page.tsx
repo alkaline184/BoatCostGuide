@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Explorer } from "@/components/shopping/explorer";
+import { CatalogExplorer } from "@/components/shopping/catalog-explorer-server";
 import { ShoppingPage } from "@/components/shopping/page-shell";
 import {
   catalogForRequest,
@@ -51,7 +51,11 @@ export default async function Manufacturer({ params }: Props) {
           </a>
         </p>
       )}
-      <Explorer records={matching} asOf={publicationDate()} />
+      <CatalogExplorer
+        manufacturerScope={manufacturer}
+        records={matching}
+        asOf={publicationDate()}
+      />
     </ShoppingPage>
   );
 }

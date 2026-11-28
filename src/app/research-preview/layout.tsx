@@ -6,13 +6,5 @@ export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 export default function PrototypeLayout({ children }: { children: ReactNode }) {
   if (process.env.NODE_ENV !== "development") notFound();
-  return (
-    <div className="container research-preview">
-      <p className="research-notice">
-        Development preview. Boat names and specifications are fictional.
-        Financial results use your inputs.
-      </p>
-      {children}
-    </div>
-  );
+  return <div className="container research-preview">{children}</div>;
 }

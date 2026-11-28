@@ -11,7 +11,9 @@ import {
   type ShoppingRecord,
 } from "@/lib/marine/shopping";
 import { readNumber } from "@/lib/validation/boat-cost";
-import { CatalogImage, specRows } from "./catalog-ui";
+import { DiagramControls } from "@/components/marine/boat-diagrams";
+import { diagramFor } from "@/lib/marine/illustrations";
+import { CatalogImage, ClaimSource, specRows } from "./catalog-ui";
 import {
   budgetValues,
   FinanceFields,
@@ -159,6 +161,7 @@ function ComparePanel({
         Starting prices may exclude destination charges and options. Cost
         assumptions stay on this page.
       </p>
+      <DiagramControls boats={selected.map(diagramFor)} />
       <label className="research-toggle">
         <input
           type="checkbox"
@@ -212,7 +215,21 @@ function ComparePanel({
                 const price = startingPrice(record, asOf);
                 return (
                   <td key={record.variant.id}>
-                    {price ? money(price.amount) : "Unavailable"}
+                    {price ? (
+                      <>
+                        {money(price.amount)} · {price.observedAt}
+                        <ClaimSource
+                          label="manufacturer price"
+                          source={
+                            record.variant.prices.find(
+                              (entry) => entry.value === price,
+                            )?.source
+                          }
+                        />
+                      </>
+                    ) : (
+                      "Unavailable"
+                    )}
                   </td>
                 );
               })}
@@ -230,7 +247,12 @@ function ComparePanel({
                     )}
                   </th>
                   {rows.map((boat, i) => (
-                    <td key={selected[i].variant.id}>{boat[index][1]}</td>
+                    <td key={selected[i].variant.id}>
+                      {boat[index][1]}
+                      {boat[index][1] !== "Unavailable" && (
+                        <ClaimSource label={label} source={boat[index][2]} />
+                      )}
+                    </td>
                   ))}
                 </tr>
               );

@@ -28,6 +28,7 @@ A warmed timing run over 100 repetitions per brand measured median normalization
 | 100   |                          50 |             7–13 hours |
 | 500   |                         450 |           60–120 hours |
 | 1,000 |                         950 |          127–253 hours |
+| 5,000 |                       4,950 |        660–1,320 hours |
 
 Reserve a separate engineering pass when a manufacturer grants an official structured feed. Estimate 4–12 engineering hours per materially different feed for contract tests, field mapping and change detection after access, plus ongoing maintenance per source. Request standardized batch delivery and clear retention, indexing and commercial reuse terms. Prioritize Kawasaki for exact-year PDFs, Sun Tracker for consistent package pricing plus detailed specs, and Sea-Doo for archives and current specs. A qualified feed makes paid external APIs unnecessary for this workflow.
 

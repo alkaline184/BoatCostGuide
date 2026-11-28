@@ -1,14 +1,14 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import Link from "next/link";
-import { money } from "@/lib/formatting/money";
 import {
-  categoryMap,
-  filterCatalog,
-  sampleTerms,
-  type ShoppingRecord,
-} from "@/lib/marine/shopping";
+  catalogPageSize,
+  type CatalogPage,
+  type catalogFacets,
+} from "@/lib/marine/catalog-search";
+import { money } from "@/lib/formatting/money";
+import { categoryMap, sampleTerms, startingPrice } from "@/lib/marine/shopping";
 import { CatalogCard } from "./catalog-ui";
 import {
   FinanceFields,
@@ -30,18 +30,21 @@ const blankFilters = {
   propulsion: "",
   sort: "name",
 };
-const optionalNumber = (text: string) =>
-  text.trim() ? Number(text) : undefined;
-
 export function Explorer({
-  records,
+  initial,
+  facets,
+  manufacturerScope = "",
+  typeScope = "",
   asOf,
   query = "",
   category = "",
   brand = "",
   openBudget = false,
 }: {
-  records: ShoppingRecord[];
+  initial: CatalogPage;
+  facets: ReturnType<typeof catalogFacets>;
+  manufacturerScope?: string;
+  typeScope?: string;
   asOf: string;
   query?: string;
   category?: string;
@@ -59,44 +62,62 @@ export function Explorer({
   const [budgetOn, setBudgetOn] = useState(openBudget);
   const form = useShoppingForm();
   const budget = budgetOn ? readBudget(form.values) : undefined;
-  const brands = [
-    ...new Map(
-      records.map(({ manufacturer }) => [manufacturer.id, manufacturer.name]),
-    ),
-  ];
-  const years = [
-    ...new Set(records.map(({ modelYear }) => modelYear.year)),
-  ].sort((a, b) => b - a);
-  const propulsion = [
-    ...new Set(
-      records.flatMap(({ variant }) =>
-        variant.specs.engine.value?.type
-          ? [variant.specs.engine.value.type]
-          : [],
-      ),
-    ),
-  ];
-  const maxPrice = optionalNumber(filters.maxPrice);
-  const rows = budget?.note
-    ? []
-    : filterCatalog(
-        records,
-        {
-          ...filters,
-          year: optionalNumber(filters.year),
-          minPrice: optionalNumber(filters.minPrice),
-          maxPrice:
-            budget?.cap !== undefined
-              ? Math.min(maxPrice ?? Infinity, budget.cap)
-              : maxPrice,
-          minHp: optionalNumber(filters.minHp),
-          minLength: optionalNumber(filters.minLength),
-          passengers: optionalNumber(filters.passengers),
-        },
-        asOf,
-        budget?.terms ?? sampleTerms,
-      );
-
+  const { brands, years, propulsion } = facets;
+  const [results, setResults] = useState(initial);
+  const [page, setPage] = useState(1);
+  const [loaded, setLoaded] = useState(false);
+  const [unavailable, setUnavailable] = useState(false);
+  const cap = budget?.cap;
+  const resultParams = new URLSearchParams({
+    ...filters,
+    priceIndex: budgetOn ? "1" : "",
+    page: String(page),
+    manufacturerScope,
+    typeScope,
+  }).toString();
+  const budgetInvalid = Boolean(budget?.note);
+  useEffect(() => {
+    if (budgetInvalid) return;
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        const response = await fetch("/api/boats?" + resultParams, {
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error("Catalog search failed");
+        const data = (await response.json()) as CatalogPage;
+        if (!controller.signal.aborted) {
+          setResults(data);
+          setLoaded(true);
+          setUnavailable(false);
+        }
+      } catch {
+        if (!controller.signal.aborted) setUnavailable(true);
+      }
+    }, 180);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [resultParams, budgetInvalid]);
+  const budgetCount =
+    budgetOn && cap !== undefined
+      ? (results.prices?.filter((amount) => amount <= cap).length ?? 0)
+      : null;
+  const rows =
+    budgetInvalid || unavailable
+      ? []
+      : results.rows.filter(
+          (record) =>
+            cap === undefined ||
+            (startingPrice(record, asOf)?.amount ?? Infinity) <= cap,
+        );
+  const count =
+    budgetInvalid || unavailable ? 0 : (budgetCount ?? results.count);
+  const last =
+    budgetCount === null
+      ? results.last
+      : Math.max(1, Math.ceil(budgetCount / catalogPageSize));
   function select(
     key: keyof typeof blankFilters,
     label: string,
@@ -108,7 +129,8 @@ export function Explorer({
         <label htmlFor={fieldPrefix + key}>{label}</label>
         <select
           id={fieldPrefix + key}
-          value={filters[key]}
+          value={key === "sort" && budgetOn ? "price" : filters[key]}
+          disabled={key === "sort" && budgetOn}
           onChange={(e) => change(key, e.target.value)}
         >
           {blank && <option value="">Any</option>}
@@ -122,6 +144,7 @@ export function Explorer({
     );
   }
   function change(key: keyof typeof blankFilters, value: string) {
+    setPage(1);
     setFilters((state) => ({ ...state, [key]: value }));
   }
   return (
@@ -194,7 +217,7 @@ export function Explorer({
         open={openBudget || undefined}
       >
         <summary>Shop by budget</summary>
-        <div className="catalog-budget">
+        <div className="catalog-budget" onChangeCapture={() => setPage(1)}>
           <p className="catalog-note">
             The initial values are illustrative. Enter your own monthly budget
             and operating estimate.
@@ -204,7 +227,10 @@ export function Explorer({
             <input
               type="checkbox"
               checked={budgetOn}
-              onChange={(e) => setBudgetOn(e.target.checked)}
+              onChange={(e) => {
+                setPage(1);
+                setBudgetOn(e.target.checked);
+              }}
             />{" "}
             Match boats to my budget
           </label>
@@ -223,12 +249,13 @@ export function Explorer({
       </details>
       <div className="catalog-toolbar">
         <p role="status">
-          {rows.length} {rows.length === 1 ? "variant" : "variants"} found
+          {count} {count === 1 ? "variant" : "variants"} found
         </p>
         <button
           type="button"
           className="tool-secondary"
           onClick={() => {
+            setPage(1);
             setFilters(blankFilters);
             setBudgetOn(false);
             form.reset();
@@ -257,7 +284,9 @@ export function Explorer({
       {!rows.length && (
         <p className="catalog-empty">
           {budget?.note ??
-            "No boats match these filters. Try a wider range or clear your filters."}
+            (unavailable
+              ? "Catalog search is temporarily unavailable."
+              : "No boats match these filters. Try a wider range or clear your filters.")}
         </p>
       )}
       <div className="catalog-grid">
@@ -293,6 +322,29 @@ export function Explorer({
           </CatalogCard>
         ))}
       </div>
+      {count > 0 && last > 1 && (
+        <nav className="catalog-toolbar" aria-label="Boat results pages">
+          <button
+            type="button"
+            className="tool-secondary"
+            disabled={!loaded || results.current <= 1}
+            onClick={() => setPage(results.current - 1)}
+          >
+            Previous
+          </button>
+          <span>
+            Page {results.current} of {last}
+          </span>
+          <button
+            type="button"
+            className="tool-secondary"
+            disabled={!loaded || results.current >= last}
+            onClick={() => setPage(results.current + 1)}
+          >
+            Next
+          </button>
+        </nav>
+      )}
     </div>
   );
 }

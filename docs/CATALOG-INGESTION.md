@@ -24,3 +24,7 @@ Enter independently verified facts from permitted documents into `catalog/manufa
 Run `npm run catalog:intake` for rejection reasons, duplicates, conflicting values, coverage, staleness and timing. Run `npm run --silent catalog:intake -- --proposal > /tmp/boat-catalog-proposal.json` for a normalized additions-only review proposal. This file is an input to the review workflow. Promote a record by mapping the reviewed row with the existing normalizer and recording the required approval for every source before adding it to the approved artifact. The intake itself never modifies that artifact.
 
 Use `npm run dev:catalog` and open the [private catalog review](http://127.0.0.1:3005/catalog-review). The production server has no intake route contents and does not consume the batch files. See [results and scale estimates](MANUFACTURER-EXPANSION.md) and the [media manifest](MANUFACTURER-MEDIA.md).
+
+## PostgreSQL import
+
+`npm run catalog:database` validates normalized source batches and reports a dry run. The same command with `-- --emit-sql` emits a transaction for a database owner to pipe to the dedicated local database. It accepts manufacturer, model year and exact variant source URL filters. Repeated runs preserve unique identities, history and approvals. A changed payload writes a review item and invalidates public snapshot equality. Run the SQL verification in [Supabase setup](SUPABASE-SETUP.md) after schema changes.

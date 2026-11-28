@@ -7,6 +7,10 @@ export default async function ComparisonPreview() {
   const { fixtures } = await import("@/components/research/catalog-fixtures");
   return (
     <>
+      <p className="research-notice">
+        Development preview. Boat names and specifications are fictional.
+        Financial results use your inputs.
+      </p>
       <div className="research-block">
         <Link href="/research-preview/model">Back to model preview</Link>
         <h1>Compare boats</h1>

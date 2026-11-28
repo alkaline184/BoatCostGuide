@@ -1,4 +1,4 @@
-import { Explorer } from "@/components/shopping/explorer";
+import { CatalogExplorer } from "@/components/shopping/catalog-explorer-server";
 import {
   CatalogCoverage,
   ShoppingPage,
@@ -23,7 +23,7 @@ export async function generateMetadata({ searchParams }: Props) {
     noindex:
       process.env.NODE_ENV === "development" ||
       Boolean(Object.keys(query).length) ||
-      publicCatalog().length === 0,
+      (await publicCatalog()).length === 0,
   });
 }
 export default async function Boats({ searchParams }: Props) {
@@ -43,7 +43,7 @@ export default async function Boats({ searchParams }: Props) {
       reviewing={reviewing}
     >
       {records.length > 0 ? (
-        <Explorer
+        <CatalogExplorer
           records={records}
           asOf={publicationDate()}
           query={string("q")}

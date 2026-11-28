@@ -20,7 +20,8 @@
     "catalog:diff": "node scripts/catalog-diff.mjs",
     "catalog:vehdb": "node scripts/vehdb-evaluate.mjs",
     "catalog:intake": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/manufacturer-intake.mts",
-    "dev:catalog": "CATALOG_LOCAL_REVIEW=1 next dev --hostname 127.0.0.1 --port 3005"
+    "dev:catalog": "CATALOG_LOCAL_REVIEW=1 next dev --hostname 127.0.0.1 --port 3005",
+    "catalog:database": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/marine/register-typescript.mjs scripts/marine/catalog-sql.mts"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "5.3.0",

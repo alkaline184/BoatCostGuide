@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { Explorer } from "@/components/shopping/explorer";
+import { CatalogExplorer } from "@/components/shopping/catalog-explorer-server";
 import { ShoppingPage } from "@/components/shopping/page-shell";
 import {
   catalogForRequest,
@@ -41,7 +41,11 @@ export default async function Category({ params }: Props) {
       <div className="catalog-category-art">
         <Image src={category.image} alt="" fill sizes="60vw" />
       </div>
-      <Explorer records={matching} asOf={publicationDate()} />
+      <CatalogExplorer
+        typeScope={type}
+        records={matching}
+        asOf={publicationDate()}
+      />
     </ShoppingPage>
   );
 }

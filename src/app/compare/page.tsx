@@ -26,6 +26,12 @@ export default async function Compare({
     typeof models === "string" ? models.slice(0, 320).split(",") : [],
     records,
   );
+  const choices =
+    records.length <= 60
+      ? records
+      : records.filter(
+          (record, index) => index < 57 || initial.includes(record.variant.id),
+        );
   return (
     <ShoppingPage
       title="Compare boats"
@@ -37,7 +43,7 @@ export default async function Compare({
       reviewing={reviewing}
     >
       <CompareBoats
-        records={records}
+        records={choices}
         initial={initial}
         asOf={publicationDate()}
       />

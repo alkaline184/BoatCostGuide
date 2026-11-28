@@ -15,3 +15,5 @@ Phase 3A shifts the homepage to broader boat discovery and ownership intent. Boa
 ## Phase 3B indexing
 
 The sitemap uses the same rights and verification gate as production model pages. Maker and type pages require two distinct families. The reviewed catalog and arbitrary filter and comparison queries remain noindex. Family URLs are canonical across variant query states. Product offers, review scores and merchant markup are absent. The public Boat Explorer is noindex while it serves the publication-pending directory.
+
+The database publication gate is reflected in model and manufacturer indexing and sitemap generation. An empty publication catalog omits catalog model links from the sitemap. Private review and illustration URLs use noindex, nofollow and noarchive and resolve to 404 in production.
