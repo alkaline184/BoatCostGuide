@@ -1,3 +1,4 @@
+import { manufacturerSources, type ManufacturerKey } from "./manufacturers";
 import { affordability } from "../finance/calculators";
 import { fixedLoan, inRange, limits, remainingBalance } from "../finance/loan";
 import { downPaymentAmount } from "../finance/boat-cost";
@@ -42,7 +43,14 @@ export type ShoppingRecord = CatalogRecord & {
 };
 
 export type ReviewRow = {
-  brand: "sea-doo" | "yamaha-waverunner" | "yamaha-boats";
+  brand: ManufacturerKey;
+  observedAt?: string;
+  yearUrl?: string;
+  widthBasis?: string;
+  propulsion?: "jet" | "outboard";
+  priceKind?: "msrp" | "manufacturer-starting";
+  priceLabel?: string;
+  historicalPrice?: boolean;
   family: string;
   trim: string;
   year: number;
@@ -68,17 +76,6 @@ export type ReviewRow = {
   intendedUse: string;
 };
 
-const brands = {
-  "sea-doo": {
-    name: "Sea-Doo",
-    url: "https://sea-doo.brp.com/us/en/models.html",
-  },
-  "yamaha-waverunner": {
-    name: "Yamaha WaveRunner",
-    url: "https://www.yamahawaverunners.com/",
-  },
-  "yamaha-boats": { name: "Yamaha Boats", url: "https://www.yamahaboats.com/" },
-};
 export const reviewDate = "2026-11-27";
 export const slugify = (text: string) =>
   text
@@ -87,7 +84,8 @@ export const slugify = (text: string) =>
     .replace(/^-|-$/g, "");
 
 export function normalizeReviewRow(row: ReviewRow): ShoppingRecord {
-  const brand = brands[row.brand];
+  const brand = manufacturerSources[row.brand];
+  const observedAt = row.observedAt ?? reviewDate;
   const modelId = slugify(row.family);
   const yearId = `${row.brand}-${modelId}-${row.year}`;
   const variantId = `${yearId}-${slugify(row.trim)}`;
@@ -95,7 +93,7 @@ export function normalizeReviewRow(row: ReviewRow): ShoppingRecord {
     provider: brand.name,
     originalId: null,
     url: row.url,
-    retrievedAt: reviewDate,
+    retrievedAt: observedAt,
     verification: "verified",
     license: {
       status: "unknown",
@@ -104,9 +102,7 @@ export function normalizeReviewRow(row: ReviewRow): ShoppingRecord {
       storage: "none",
       expiresAt: null,
       attribution: brand.name,
-      restrictions: [
-        "Independent factual review. Commercial reuse of source-derived records unresolved.",
-      ],
+      restrictions: [brand.acquisition, brand.terms],
     },
   };
   const obs = <T>(value: T | null, recordSource = source): Observation<T> => ({
@@ -131,7 +127,13 @@ export function normalizeReviewRow(row: ReviewRow): ShoppingRecord {
       category: row.category,
       source,
     },
-    modelYear: { id: yearId, modelId, year: row.year, market: "US", source },
+    modelYear: {
+      id: yearId,
+      modelId,
+      year: row.year,
+      market: "US",
+      source: { ...source, url: row.yearUrl ?? row.url },
+    },
     variant: {
       id: variantId,
       modelYearId: yearId,
@@ -140,6 +142,7 @@ export function normalizeReviewRow(row: ReviewRow): ShoppingRecord {
       specs: {
         length: numeric(row.length, "in"),
         beam: numeric(row.beam, "in"),
+        ...(row.widthBasis ? { widthBasis: obs(row.widthBasis) } : {}),
         draft: obs(null),
         dryWeight: numeric(row.weight, "lb"),
         dryWeightBasis: obs(row.weightBasis ?? null),
@@ -148,7 +151,7 @@ export function normalizeReviewRow(row: ReviewRow): ShoppingRecord {
         storageCapacity: numeric(row.storage, "US gal"),
         hullMaterial: obs(row.hull ?? null),
         engine: obs({
-          type: "jet",
+          type: row.propulsion ?? "jet",
           count: row.engines,
           powerPerEngine:
             row.engines === 1 && row.hp ? { amount: row.hp, unit: "hp" } : null,
@@ -167,10 +170,12 @@ export function normalizeReviewRow(row: ReviewRow): ShoppingRecord {
           : [
               obs(
                 {
-                  kind: "manufacturer-starting",
+                  kind: row.priceKind ?? "manufacturer-starting",
+                  ...(row.priceLabel ? { label: row.priceLabel } : {}),
+                  ...(row.historicalPrice ? { historical: true } : {}),
                   amount: row.price,
                   currency: "USD",
-                  observedAt: reviewDate,
+                  observedAt,
                   includedItems: row.includes ?? [],
                   excludedItems: row.excludes ?? [],
                 },
@@ -211,6 +216,15 @@ export function validPrice(price: PriceObservation, asOf: string) {
   return days >= 0 && days <= 180;
 }
 
+export function priceBasisLabel(price: NonNullable<PriceObservation["value"]>) {
+  const basis =
+    price.label ??
+    (price.kind === "msrp"
+      ? "Manufacturer base MSRP"
+      : "Manufacturer starting price");
+  return price.historical ? `Archived ${basis.toLowerCase()}` : basis;
+}
+
 export function startingPrice(
   record: ShoppingRecord,
   asOf = new Date().toISOString().slice(0, 10),
@@ -219,7 +233,9 @@ export function startingPrice(
     record.variant.prices
       .filter(
         (price) =>
-          price.value?.kind === "manufacturer-starting" &&
+          (price.value?.kind === "manufacturer-starting" ||
+            price.value?.kind === "msrp") &&
+          !price.value.historical &&
           validPrice(price, asOf),
       )
       .sort((a, b) =>

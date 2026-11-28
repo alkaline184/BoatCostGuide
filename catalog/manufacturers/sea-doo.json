@@ -1,0 +1,218 @@
+{
+  "brand": "sea-doo",
+  "observedAt": "2026-11-27",
+  "records": [
+    {
+      "model": {
+        "family": "GTI",
+        "trim": "130",
+        "year": 2025,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gti.html",
+        "yearUrl": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gti.html",
+        "verifiedYear": 2025
+      },
+      "facts": {
+        "length": {
+          "value": 130.7,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 49.2,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 741,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 18.5,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 40.3,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1630,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Manufacturer dry weight for listed configuration",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Rotax 1630 ACE",
+        "hp": 130
+      },
+      "price": {
+        "amount": 11699,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "url": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gti.html",
+        "historical": true,
+        "excludes": ["Transport", "Preparation"]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Use the archived model-year dimensions to compare used examples. Condition, exact equipment and any included trailer should be checked against the seller's quote."
+    },
+    {
+      "model": {
+        "family": "GTR",
+        "trim": "230",
+        "year": 2025,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gtr.html",
+        "yearUrl": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gtr.html",
+        "verifiedYear": 2025
+      },
+      "facts": {
+        "length": {
+          "value": 130.7,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 49.2,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 776,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 18.5,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 40.3,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1630,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Manufacturer dry weight for listed configuration",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Rotax 1630 ACE",
+        "hp": 230
+      },
+      "price": {
+        "amount": 14299,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "url": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gtr.html",
+        "historical": true,
+        "excludes": ["Transport", "Preparation"]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Use the archived model-year dimensions to compare used examples. Condition, exact equipment and any included trailer should be checked against the seller's quote."
+    },
+    {
+      "model": {
+        "family": "GTX",
+        "trim": "170",
+        "year": 2025,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gtx.html",
+        "yearUrl": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gtx.html",
+        "verifiedYear": 2025
+      },
+      "facts": {
+        "length": {
+          "value": 135.9,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 49.2,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 776,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 18.5,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 26.1,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1630,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Manufacturer dry weight for listed configuration",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Rotax 1630 ACE",
+        "hp": 170
+      },
+      "price": {
+        "amount": 15399,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "url": "https://sea-doo.brp.com/us/en/models/previous-models/2025/gtx.html",
+        "historical": true,
+        "excludes": ["Transport", "Preparation"]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Use the archived model-year dimensions to compare used examples. Condition, exact equipment and any included trailer should be checked against the seller's quote.",
+      "checks": [
+        {
+          "field": "length",
+          "observation": {
+            "value": 345.1,
+            "unit": "cm"
+          },
+          "url": "https://sea-doo.brp.com/content/dam/global/en/sea-doo/my25/documents/specs-sheets/na/en/SEA-MY25-TOUR-GTX-SPEC-ENNA-Page-PDFx.pdf",
+          "year": 2025
+        },
+        {
+          "field": "beam",
+          "observation": {
+            "value": 125,
+            "unit": "cm"
+          },
+          "url": "https://sea-doo.brp.com/content/dam/global/en/sea-doo/my25/documents/specs-sheets/na/en/SEA-MY25-TOUR-GTX-SPEC-ENNA-Page-PDFx.pdf",
+          "year": 2025
+        },
+        {
+          "field": "weight",
+          "observation": {
+            "value": 776,
+            "unit": "lb"
+          },
+          "url": "https://sea-doo.brp.com/content/dam/global/en/sea-doo/my25/documents/specs-sheets/na/en/SEA-MY25-TOUR-GTX-SPEC-ENNA-Page-PDFx.pdf",
+          "year": 2025
+        },
+        {
+          "field": "fuel",
+          "observation": {
+            "value": 18.5,
+            "unit": "US gal"
+          },
+          "url": "https://sea-doo.brp.com/content/dam/global/en/sea-doo/my25/documents/specs-sheets/na/en/SEA-MY25-TOUR-GTX-SPEC-ENNA-Page-PDFx.pdf",
+          "year": 2025
+        }
+      ]
+    }
+  ]
+}

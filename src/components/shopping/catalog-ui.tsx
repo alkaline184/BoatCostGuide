@@ -7,6 +7,7 @@ import {
   financeAtPrice,
   modelPath,
   startingPrice,
+  priceBasisLabel,
   type Budget,
   type ShoppingRecord,
 } from "@/lib/marine/shopping";
@@ -81,7 +82,7 @@ export function CatalogCard({
         </p>
         <p className="catalog-price">
           {price ? money(price.amount) : "Price unavailable"}{" "}
-          {price && <small>manufacturer starting price</small>}
+          {price && <small>{priceBasisLabel(price)}</small>}
         </p>
         {payment !== undefined && (
           <p>
@@ -107,7 +108,11 @@ export function specRows(record: ShoppingRecord) {
     item ? formatObservation(item) : "Unavailable";
   return [
     ["Overall length", formatObservation(s.length)],
-    ["Beam or width", formatObservation(s.beam)],
+    [
+      "Beam or width",
+      formatObservation(s.beam) +
+        (s.widthBasis?.value ? ` (${s.widthBasis.value.toLowerCase()})` : ""),
+    ],
     ["Draft", formatObservation(s.draft)],
     ["Dry weight", formatObservation(s.dryWeight)],
     ["Weight definition", s.dryWeightBasis?.value ?? "Unavailable"],

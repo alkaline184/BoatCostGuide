@@ -16,3 +16,11 @@ Run `npm run catalog:vehdb` with `VEHDB_API_KEY` in the environment or an ignore
 ## Expansion
 
 Start with priced recreational PWC from Kawasaki and Yamaha and entry-level pontoons with a confirmed engine package from Sun Tracker and Bennington. Add Scarab and archived jet boats where exact configurations and price bases are available. Seek written rights in parallel. Grow toward 100–150 useful variants by filling price bands and meaningful cross-brand comparisons before adding more trim permutations.
+
+## Manufacturer batch intake
+
+Enter independently verified facts from permitted documents into `catalog/manufacturers/<brand>.json`, retaining the literal measurement value and unit, exact year evidence, source and price basis. The source registry identifies official hosts and restrictions. Consistent US layouts can be imported across a batch after editorial review. The importer makes zero network requests.
+
+Run `npm run catalog:intake` for rejection reasons, duplicates, conflicting values, coverage, staleness and timing. Run `npm run --silent catalog:intake -- --proposal > /tmp/boat-catalog-proposal.json` for a normalized additions-only review proposal. This file is an input to the review workflow. Promote a record by mapping the reviewed row with the existing normalizer and recording the required approval for every source before adding it to the approved artifact. The intake itself never modifies that artifact.
+
+Use `npm run dev:catalog` and open the [private catalog review](http://127.0.0.1:3005/catalog-review). The production server has no intake route contents and does not consume the batch files. See [results and scale estimates](MANUFACTURER-EXPANSION.md) and the [media manifest](MANUFACTURER-MEDIA.md).

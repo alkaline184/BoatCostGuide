@@ -51,3 +51,5 @@ Use Vercel with the Next.js framework preset and the repository root as the proj
 ### Catalog development
 
 Use `npm run dev -- --hostname 127.0.0.1 --port 3006` for the local model review. Use `npm run build` followed by `npm run start -- --hostname 127.0.0.1 --port 3005` for the production preview. Phase 3B includes 21 verified variants awaiting publication clearance. Production Boat Explorer currently offers the official lineup directory and planning tools. See [catalog ingestion](docs/CATALOG-INGESTION.md) and [catalog quality](docs/CATALOG-QUALITY.md).
+
+Phase 3B.2 expands local catalog coverage to 50 verified variants. Run `npm run catalog:intake` for the intake report and `npm run dev:catalog` for the [private manufacturer review](http://127.0.0.1:3005/catalog-review).

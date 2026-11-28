@@ -67,6 +67,7 @@ export type Specifications = {
   length: Observation<Length>;
   beam: Observation<Length>;
   draft: Observation<Length>;
+  widthBasis?: Observation<string>;
   dryWeight: Observation<Weight>;
   dryWeightBasis?: Observation<string>;
   storageCapacity?: Observation<Fuel>;
@@ -91,6 +92,8 @@ export type PriceObservation = Observation<{
   amount: number;
   currency: "USD";
   observedAt: string;
+  historical?: boolean;
+  label?: string;
   includedItems: readonly string[];
   excludedItems?: readonly string[];
 }>;

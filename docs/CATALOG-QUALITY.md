@@ -31,3 +31,7 @@ BRP's legal notice restricts reuse of website material and Yamaha's terms cover 
 VehDB documents broad North American coverage, filtered make/model/year searches, authentication and monthly quota caps. It advertises specifications without manufacturer prices. The free plan lists 100 calls/month and 10/minute, subject to separate result and row limits. No credential was available, so actual target-brand coverage, variant accuracy, units and update behavior remain unverified. Confirm reuse, caching, attribution, retention and indexing with the provider before importing data. [Boats API](https://vehdb.com/boats-api) · [API reference](https://vehdb.com/docs/api) · [Pricing](https://vehdb.com/pricing) · [Terms](https://vehdb.com/terms)
 
 Planning estimate for the existing pilot is three to six editorial hours per price/specification refresh, with extra time for model-year launches and packaging changes. Budget approximately 10–25 minutes per new variant after sources and terms are established. Treat licensing turnaround and source disagreement as separate work.
+
+## Phase 3B.2 update
+
+The earlier table records the original 21-variant pilot. The expanded result is 50 independently sourced US configurations, 38 current price observations, five archive price observations, and zero approved publications. See the [expansion audit](MANUFACTURER-EXPANSION.md) for the current completeness and cross-check denominators.

@@ -207,7 +207,7 @@ function ComparePanel({
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Manufacturer starting price</th>
+              <th scope="row">Manufacturer price</th>
               {selected.map((record) => {
                 const price = startingPrice(record, asOf);
                 return (

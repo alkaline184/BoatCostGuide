@@ -16,6 +16,7 @@ import {
   modelPath,
   similarBoats,
   startingPrice,
+  priceBasisLabel,
 } from "@/lib/marine/shopping";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { money } from "@/lib/formatting/money";
@@ -57,7 +58,10 @@ export default async function Model({ params, searchParams }: Props) {
     variants.find((item) => item.variant.id === variant) ?? variants[0];
   const name = record.manufacturer.name + " " + record.model.name;
   const asOf = publicationDate();
-  const price = startingPrice(record, asOf);
+  const currentPrice = startingPrice(record, asOf);
+  const price =
+    currentPrice ??
+    record.variant.prices.find(({ value }) => value?.historical)?.value;
   const suggestions = similarBoats(record, records, asOf);
   const category = categoryMap[record.model.category];
   const brandHasPage =
@@ -94,7 +98,7 @@ export default async function Model({ params, searchParams }: Props) {
         <div className="catalog-model-info">
           <p className="catalog-price">
             {price ? money(price.amount) : "Starting price unavailable"}{" "}
-            {price && <small>manufacturer starting price</small>}
+            {price && <small>{priceBasisLabel(price)}</small>}
           </p>
           {price?.includedItems.length ? (
             <p>Included in source price: {price.includedItems.join(", ")}.</p>
@@ -156,7 +160,7 @@ export default async function Model({ params, searchParams }: Props) {
             ))}
           </dl>
         </section>
-        <ModelScenario key={record.variant.id} price={price?.amount} />
+        <ModelScenario key={record.variant.id} price={currentPrice?.amount} />
       </div>
       <section className="research-block">
         <h2>Buying considerations</h2>

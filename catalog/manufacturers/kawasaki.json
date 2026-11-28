@@ -1,0 +1,505 @@
+{
+  "brand": "kawasaki",
+  "observedAt": "2026-11-27",
+  "records": [
+    {
+      "model": {
+        "family": "Jet Ski STX 160",
+        "trim": "160X",
+        "year": 2027,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160x",
+        "yearUrl": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160x",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": 130.3,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 46.5,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 798.2,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 20.6,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 35,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1498,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Estimated dry weight without operating fluids, fuel, and toolkit",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Kawasaki 1,498 cc inline four"
+      },
+      "price": {
+        "amount": 14599,
+        "currency": "USD",
+        "kind": "msrp",
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160x",
+        "historical": false,
+        "excludes": [
+          "Destination",
+          "Options",
+          "Taxes",
+          "Title and license",
+          "Dealer charges"
+        ]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Compare the listed dry weight and hull length with the exact model year you are shopping. Confirm loaded trailer weight and destination fees with the dealer.",
+      "checks": [
+        {
+          "field": "length",
+          "observation": {
+            "value": 130.3,
+            "unit": "in"
+          },
+          "url": "https://www.kawasaki.com/en-us/watercraft/jet-ski/sit-down/jet-ski-stx-160/2027-jet-ski-stx-160x",
+          "year": 2027
+        },
+        {
+          "field": "weight",
+          "observation": {
+            "value": 798.2,
+            "unit": "lb"
+          },
+          "url": "https://www.kawasaki.com/en-us/watercraft/jet-ski/sit-down/jet-ski-stx-160/2027-jet-ski-stx-160x",
+          "year": 2027
+        },
+        {
+          "field": "fuel",
+          "observation": {
+            "value": 20.6,
+            "unit": "US gal"
+          },
+          "url": "https://www.kawasaki.com/en-us/watercraft/jet-ski/sit-down/jet-ski-stx-160/2027-jet-ski-stx-160x",
+          "year": 2027
+        }
+      ]
+    },
+    {
+      "model": {
+        "family": "Jet Ski STX 160",
+        "trim": "160LX",
+        "year": 2027,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160lx",
+        "yearUrl": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160lx",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": 134.6,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 46.7,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 837.9,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 20.6,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 32.2,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1498,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Estimated dry weight without operating fluids, fuel, and toolkit",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Kawasaki 1,498 cc inline four"
+      },
+      "price": {
+        "amount": 16799,
+        "currency": "USD",
+        "kind": "msrp",
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160lx",
+        "historical": false,
+        "excludes": [
+          "Destination",
+          "Options",
+          "Taxes",
+          "Title and license",
+          "Dealer charges"
+        ]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Compare the listed dry weight and hull length with the exact model year you are shopping. Confirm loaded trailer weight and destination fees with the dealer.",
+      "checks": [
+        {
+          "field": "length",
+          "observation": {
+            "value": 134.6,
+            "unit": "in"
+          },
+          "url": "https://www.kawasaki.com/en-us/watercraft/jet-ski/sit-down/jet-ski-stx-160/2027-jet-ski-stx-160lx",
+          "year": 2027
+        },
+        {
+          "field": "weight",
+          "observation": {
+            "value": 837.9,
+            "unit": "lb"
+          },
+          "url": "https://www.kawasaki.com/en-us/watercraft/jet-ski/sit-down/jet-ski-stx-160/2027-jet-ski-stx-160lx",
+          "year": 2027
+        },
+        {
+          "field": "fuel",
+          "observation": {
+            "value": 20.6,
+            "unit": "US gal"
+          },
+          "url": "https://www.kawasaki.com/en-us/watercraft/jet-ski/sit-down/jet-ski-stx-160/2027-jet-ski-stx-160lx",
+          "year": 2027
+        }
+      ]
+    },
+    {
+      "model": {
+        "family": "Jet Ski STX 160",
+        "trim": "160LX-S",
+        "year": 2027,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160lx-s",
+        "yearUrl": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160lx-s",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": 134.6,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 46.7,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 826.9,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 20.6,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 35,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1498,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Estimated dry weight without operating fluids, fuel, and toolkit",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Kawasaki 1,498 cc inline four"
+      },
+      "price": {
+        "amount": 15799,
+        "currency": "USD",
+        "kind": "msrp",
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-stx-160lx-s",
+        "historical": false,
+        "excludes": [
+          "Destination",
+          "Options",
+          "Taxes",
+          "Title and license",
+          "Dealer charges"
+        ]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Compare the listed dry weight and hull length with the exact model year you are shopping. Confirm loaded trailer weight and destination fees with the dealer."
+    },
+    {
+      "model": {
+        "family": "Jet Ski ST 160",
+        "trim": "160",
+        "year": 2027,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-st-160",
+        "yearUrl": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-st-160",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": 124.1,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 46.7,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 745.3,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 20.6,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 35,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1498,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Estimated dry weight without operating fluids, fuel, and toolkit",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Kawasaki 1,498 cc inline four"
+      },
+      "price": {
+        "amount": 11899,
+        "currency": "USD",
+        "kind": "msrp",
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-st-160",
+        "historical": false,
+        "excludes": [
+          "Destination",
+          "Options",
+          "Taxes",
+          "Title and license",
+          "Dealer charges"
+        ]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Compare the listed dry weight and hull length with the exact model year you are shopping. Confirm loaded trailer weight and destination fees with the dealer."
+    },
+    {
+      "model": {
+        "family": "Jet Ski ST 160",
+        "trim": "160X",
+        "year": 2027,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-st-160x",
+        "yearUrl": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-st-160x",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": 124.1,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 46.7,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 745.3,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 20.6,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 35,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1498,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Estimated dry weight without operating fluids, fuel, and toolkit",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Kawasaki 1,498 cc inline four"
+      },
+      "price": {
+        "amount": 12499,
+        "currency": "USD",
+        "kind": "msrp",
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2027-jet-ski-st-160x",
+        "historical": false,
+        "excludes": [
+          "Destination",
+          "Options",
+          "Taxes",
+          "Title and license",
+          "Dealer charges"
+        ]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Compare the listed dry weight and hull length with the exact model year you are shopping. Confirm loaded trailer weight and destination fees with the dealer."
+    },
+    {
+      "model": {
+        "family": "Jet Ski STX 160",
+        "trim": "160X",
+        "year": 2026,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2026-jet-ski-stx-160x",
+        "yearUrl": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2026-jet-ski-stx-160x",
+        "verifiedYear": 2026
+      },
+      "facts": {
+        "length": {
+          "value": 130.3,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 46.5,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 798.2,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 20.6,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 35,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1498,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Estimated dry weight without operating fluids, fuel, and toolkit",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Kawasaki 1,498 cc inline four"
+      },
+      "price": {
+        "amount": 13899,
+        "currency": "USD",
+        "kind": "msrp",
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2026-jet-ski-stx-160x",
+        "historical": true,
+        "excludes": [
+          "Destination",
+          "Options",
+          "Taxes",
+          "Title and license",
+          "Dealer charges"
+        ]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Compare the listed dry weight and hull length with the exact model year you are shopping. Confirm loaded trailer weight and destination fees with the dealer."
+    },
+    {
+      "model": {
+        "family": "Jet Ski STX 160",
+        "trim": "160X",
+        "year": 2025,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2025-jet-ski-stx-160x",
+        "yearUrl": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2025-jet-ski-stx-160x",
+        "verifiedYear": 2025
+      },
+      "facts": {
+        "length": {
+          "value": 124.1,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 46.5,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 725.4,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 20.6,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 35,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1498,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Estimated dry weight without operating fluids, fuel, and toolkit",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Kawasaki 1,498 cc inline four"
+      },
+      "price": {
+        "amount": 12599,
+        "currency": "USD",
+        "kind": "msrp",
+        "url": "https://www.kawasaki.com/en-us/products/ProductSpecSheetPDF/2025-jet-ski-stx-160x",
+        "historical": true,
+        "excludes": [
+          "Destination",
+          "Options",
+          "Taxes",
+          "Title and license",
+          "Dealer charges"
+        ]
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Compare the listed dry weight and hull length with the exact model year you are shopping. Confirm loaded trailer weight and destination fees with the dealer."
+    }
+  ]
+}

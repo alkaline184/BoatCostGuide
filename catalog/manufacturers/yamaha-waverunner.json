@@ -1,0 +1,202 @@
+{
+  "brand": "yamaha-waverunner",
+  "observedAt": "2026-11-27",
+  "records": [
+    {
+      "model": {
+        "family": "VX",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "yearUrl": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": 132.7,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 48.8,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 719,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 18.5,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 30.1,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1049,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Manufacturer dry weight",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha TR-1"
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Verify the actual year on any used listing. Several VX versions share dimensions and fuel capacity, so compare the engine and equipment separately."
+    },
+    {
+      "model": {
+        "family": "VX Deluxe",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "yearUrl": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": 132.7,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 48.8,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 683,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 18.5,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 30.1,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1049,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Manufacturer dry weight",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha TR-1"
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Verify the actual year on any used listing. Several VX versions share dimensions and fuel capacity, so compare the engine and equipment separately."
+    },
+    {
+      "model": {
+        "family": "VX Cruiser",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "yearUrl": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": 132.7,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 48.8,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 688,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 18.5,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 30.1,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1049,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Manufacturer dry weight",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha TR-1"
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Verify the actual year on any used listing. Several VX versions share dimensions and fuel capacity, so compare the engine and equipment separately."
+    },
+    {
+      "model": {
+        "family": "VX Cruiser HO",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "pwc"
+      },
+      "evidence": {
+        "url": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "yearUrl": "https://www.yamahawaverunners.com/globalassets/z-old/_waverunners/all-waverunners/2023waverunnerbrochure2.pdf",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": 132.7,
+          "unit": "in"
+        },
+        "beam": {
+          "value": 48.8,
+          "unit": "in"
+        },
+        "weight": {
+          "value": 785,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 18.5,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 30.1,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "weightBasis": "Manufacturer dry weight",
+      "capacity": 3,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Recreation with passengers",
+      "editorial": "Verify the actual year on any used listing. Several VX versions share dimensions and fuel capacity, so compare the engine and equipment separately."
+    }
+  ]
+}

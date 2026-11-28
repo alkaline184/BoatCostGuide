@@ -1,11 +1,9 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { manufacturerReview } from "./manufacturer-review-server";
 import approved from "../../../catalog/approved.json";
 import {
   isPublishable,
   normalizeReviewRow,
   validateCatalog,
-  type ReviewRow,
   type ShoppingRecord,
 } from "./shopping";
 
@@ -33,11 +31,10 @@ export async function catalogForRequest() {
   if (process.env.NODE_ENV !== "development")
     return { records: published, reviewing: false };
   try {
-    const raw = await readFile(
-      join(process.cwd(), "catalog", "review.json"),
-      "utf8",
+    const review = await manufacturerReview(publicationDate());
+    const records = [...review.baseline, ...review.rows].map(
+      normalizeReviewRow,
     );
-    const records = (JSON.parse(raw) as ReviewRow[]).map(normalizeReviewRow);
     const issues = validateCatalog(records, publicationDate(), {
       allowStale: true,
     });

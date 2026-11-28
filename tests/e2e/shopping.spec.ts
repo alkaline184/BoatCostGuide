@@ -13,7 +13,7 @@ test("real explorer filters, budgets and opens a comparison", async ({
   await expect(
     page.getByRole("heading", { name: "Boat Explorer" }),
   ).toBeVisible();
-  await expect(page.getByText("21 variants found")).toBeVisible();
+  await expect(page.getByText("50 variants found")).toBeVisible();
   if (info.project.name !== "tablet")
     await page.screenshot({ path: info.outputPath("explorer.png") });
   await page.getByLabel("Search manufacturer or model").fill("Spark");
@@ -100,4 +100,35 @@ test("public sitemap excludes rights-pending combinations", async ({
   expect(sitemap).not.toMatch(
     /\/boats|\/boat-types|\/compare|research-preview/,
   );
+});
+
+test("manufacturer expansion supports pontoon research and archived price isolation", async ({
+  page,
+  request,
+}) => {
+  await page.goto(review + "/boat-types/pontoons");
+  await expect(
+    page.getByRole("heading", { name: "Pontoons", exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("17 variants found")).toBeVisible();
+  await page.goto(review + "/boats/sun-tracker/bass-buggy-16-xl");
+  await expect(
+    page
+      .locator(".catalog-model-info")
+      .getByText("National base package price"),
+  ).toBeVisible();
+  await expect(page.getByText(/optional trailer/i).first()).toBeVisible();
+  await page.goto(
+    review +
+      "/boats/kawasaki/jet-ski-stx-160?variant=kawasaki-jet-ski-stx-160-2025-160x",
+  );
+  await expect(page.getByText("Archived manufacturer base MSRP")).toBeVisible();
+  await expect(page.getByLabel("Purchase price")).toHaveValue("");
+  for (const origin of ["", review]) {
+    const response = await request.get(origin + "/catalog-review");
+    expect(response.status()).toBe(404);
+    expect(response.headers()["x-robots-tag"]).toContain("noindex");
+  }
+  const production = await request.get("/boats/sun-tracker/bass-buggy-16-xl");
+  expect(production.status()).toBe(404);
 });

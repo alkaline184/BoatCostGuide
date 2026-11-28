@@ -1,0 +1,826 @@
+{
+  "brand": "sun-tracker",
+  "observedAt": "2026-11-27",
+  "records": [
+    {
+      "model": {
+        "family": "Bass Buggy 16 XL",
+        "trim": "Select · 20 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/fishing-pontoons/bass-buggy-16-xl-select.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [18, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 0],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 1310,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 9,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 7,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 20 ELPT",
+        "hp": 20
+      },
+      "price": {
+        "amount": 19795,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Freshwater fishing",
+      "editorial": "The 20 hp base package gives you a starting point for comparing dealer quotes. Confirm passenger space with fishing gear and whether a trailer is itemized separately.",
+      "checks": [
+        {
+          "field": "length",
+          "observation": {
+            "value": 5.61,
+            "unit": "m"
+          },
+          "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+          "year": 2027
+        },
+        {
+          "field": "beam",
+          "observation": {
+            "value": 2.44,
+            "unit": "m"
+          },
+          "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+          "year": 2027
+        }
+      ]
+    },
+    {
+      "model": {
+        "family": "Bass Buggy 18",
+        "trim": "DLX · 40 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/fishing-pontoons/bass-buggy-18-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [20, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 1470,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 8,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 40 ELPT Command Thrust",
+        "hp": 40
+      },
+      "price": {
+        "amount": 26995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Freshwater fishing",
+      "editorial": "The 40 hp base package gives you a starting point for comparing dealer quotes. Confirm passenger space with fishing gear and whether a trailer is itemized separately."
+    },
+    {
+      "model": {
+        "family": "Fishin' Barge 20",
+        "trim": "DLX · 60 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/fishing-pontoons/fishin-barge-20-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [21, 11],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 1940,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 10,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 60 ELPT Command Thrust",
+        "hp": 60
+      },
+      "price": {
+        "amount": 32995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Freshwater fishing",
+      "editorial": "The 60 hp base package gives you a starting point for comparing dealer quotes. Confirm passenger space with fishing gear and whether a trailer is itemized separately."
+    },
+    {
+      "model": {
+        "family": "Fishin' Barge 22",
+        "trim": "DLX · 90 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/fishing-pontoons/fishin-barge-22-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [24, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2040,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 11,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 90 ELPT Command Thrust",
+        "hp": 90
+      },
+      "price": {
+        "amount": 37995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Freshwater fishing",
+      "editorial": "The 90 hp base package gives you a starting point for comparing dealer quotes. Confirm passenger space with fishing gear and whether a trailer is itemized separately.",
+      "checks": [
+        {
+          "field": "length",
+          "observation": {
+            "value": 7.37,
+            "unit": "m"
+          },
+          "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+          "year": 2027
+        },
+        {
+          "field": "beam",
+          "observation": {
+            "value": 2.59,
+            "unit": "m"
+          },
+          "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+          "year": 2027
+        }
+      ]
+    },
+    {
+      "model": {
+        "family": "Fishin' Barge 22",
+        "trim": "XP3 · 150 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/fishing-pontoons/fishin-barge-22-xp3.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [24, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2880,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 52,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 11,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 150 L",
+        "hp": 150
+      },
+      "price": {
+        "amount": 48995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Freshwater fishing",
+      "editorial": "Compare the 150 hp tritoon package with the smaller-engine DLX before pricing fuel, storage, and towing. Verify the actual trailer quote."
+    },
+    {
+      "model": {
+        "family": "Sportfish 20",
+        "trim": "DLX · 60 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/fishing-pontoons/sportfish-20-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [21, 11],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 1940,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 10,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 60 ELPT Command Thrust",
+        "hp": 60
+      },
+      "price": {
+        "amount": 32995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Freshwater fishing",
+      "editorial": "The 60 hp base package gives you a starting point for comparing dealer quotes. Confirm passenger space with fishing gear and whether a trailer is itemized separately."
+    },
+    {
+      "model": {
+        "family": "Sportfish 22",
+        "trim": "DLX · 90 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/fishing-pontoons/sportfish-22-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [24, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2380,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 10,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 90 ELPT Command Thrust",
+        "hp": 90
+      },
+      "price": {
+        "amount": 37995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Freshwater fishing",
+      "editorial": "The 90 hp base package gives you a starting point for comparing dealer quotes. Confirm passenger space with fishing gear and whether a trailer is itemized separately."
+    },
+    {
+      "model": {
+        "family": "Party Barge 16",
+        "trim": "DLX · 20 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-16-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [18, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 0],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 1310,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 9,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 8,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 20 ELPT",
+        "hp": 20
+      },
+      "price": {
+        "amount": 20595,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Use the 8-person US capacity to compare layouts. Check the installed 20 hp package and trailer before estimating the tow setup."
+    },
+    {
+      "model": {
+        "family": "Party Barge 18",
+        "trim": "DLX · 40 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-18-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [20, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 1450,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 9,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 40 ELPT Command Thrust",
+        "hp": 40
+      },
+      "price": {
+        "amount": 30995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Use the 9-person US capacity to compare layouts. Check the installed 40 hp package and trailer before estimating the tow setup."
+    },
+    {
+      "model": {
+        "family": "Party Barge 20",
+        "trim": "DLX · 60 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-20-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [21, 11],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2080,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 10,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 60 ELPT Command Thrust",
+        "hp": 60
+      },
+      "price": {
+        "amount": 32995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Use the 10-person US capacity to compare layouts. Check the installed 60 hp package and trailer before estimating the tow setup."
+    },
+    {
+      "model": {
+        "family": "Party Barge 22",
+        "trim": "DLX · 90 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-22-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [24, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2080,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 11,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 90 ELPT Command Thrust",
+        "hp": 90
+      },
+      "price": {
+        "amount": 37995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Use the 11-person US capacity to compare layouts. Check the installed 90 hp package and trailer before estimating the tow setup."
+    },
+    {
+      "model": {
+        "family": "Party Barge 22",
+        "trim": "XP3 · 150 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-22-xp3.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [24, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2980,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 52,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 11,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 150 L",
+        "hp": 150
+      },
+      "price": {
+        "amount": 48995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Compare the 150 hp tritoon package with the smaller-engine DLX before pricing fuel, storage, and towing. Verify the actual trailer quote."
+    },
+    {
+      "model": {
+        "family": "Party Barge 22",
+        "trim": "RF DLX · 90 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-22-rf-dlx.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [24, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2300,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 32.1,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 11,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 90 ELPT Command Thrust",
+        "hp": 90
+      },
+      "price": {
+        "amount": 39995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Use the 11-person US capacity to compare layouts. Check the installed 90 hp package and trailer before estimating the tow setup."
+    },
+    {
+      "model": {
+        "family": "Party Barge 22",
+        "trim": "RF XP3 · 150 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-22-rf-xp3.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [24, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 2980,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 52,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 11,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 150 L",
+        "hp": 150
+      },
+      "price": {
+        "amount": 51995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Compare the 150 hp tritoon package with the smaller-engine DLX before pricing fuel, storage, and towing. Verify the actual trailer quote."
+    },
+    {
+      "model": {
+        "family": "Party Barge 24",
+        "trim": "XP3 · 150 hp base package",
+        "year": 2027,
+        "market": "US",
+        "category": "pontoon"
+      },
+      "evidence": {
+        "url": "https://www.suntrackerboats.com/recreational-pontoons/party-barge-24-xp3.html",
+        "yearUrl": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "verifiedYear": 2027
+      },
+      "facts": {
+        "length": {
+          "value": [26, 2],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "weight": {
+          "value": 3360,
+          "unit": "lb"
+        },
+        "fuel": {
+          "value": 52,
+          "unit": "US gal"
+        }
+      },
+      "widthBasis": "Deck width",
+      "weightBasis": "Manufacturer average dry weight",
+      "capacity": 12,
+      "power": {
+        "type": "outboard",
+        "count": 1,
+        "name": "Mercury FourStroke 150 L",
+        "hp": 150
+      },
+      "price": {
+        "amount": 51995,
+        "currency": "USD",
+        "kind": "manufacturer-starting",
+        "label": "National base package price",
+        "url": "https://www.suntrackerboats.com/pontoon-boats.html",
+        "includes": ["Listed Mercury outboard"],
+        "excludes": ["Optional trailer", "Dealer preparation", "Freight"]
+      },
+      "intendedUse": "Group lake outings",
+      "editorial": "Compare the 150 hp tritoon package with the smaller-engine DLX before pricing fuel, storage, and towing. Verify the actual trailer quote."
+    }
+  ]
+}
