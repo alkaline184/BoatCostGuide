@@ -140,7 +140,7 @@ async function run() {
     ["recentOverlap", { yearFrom: 2020, yearTo: 2027 }],
   ] as Array<[string, Record<string, string | number>]>;
   const makers = [
-    ...new Map(
+    ...new Map<string, { query: string; category: string }>(
       [
         ...targets.map(
           (group) =>
