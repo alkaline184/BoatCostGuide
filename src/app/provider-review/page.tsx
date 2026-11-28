@@ -161,6 +161,11 @@ export default async function ProviderReview({
       crumbs={[["Private Boat Explorer", route]]}
       reviewing={false}
     >
+      <p>
+        <Link href="/provider-review/quality" prefetch={false}>
+          View data quality dashboard
+        </Link>
+      </p>
       <p className="research-notice">
         <a href="https://theboatdb.com/">Data by TheBoatDB</a>. Production
         windows describe build periods. US model years and market availability

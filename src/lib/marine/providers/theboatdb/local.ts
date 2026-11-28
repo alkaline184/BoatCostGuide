@@ -6,7 +6,7 @@ import { createBoatDbRepository } from "./repository";
 
 let repository: ReturnType<typeof createBoatDbRepository> | undefined;
 
-export async function localBoatDb() {
+export async function requireLocalBoatDbReview() {
   if (
     process.env.NODE_ENV !== "development" ||
     process.env.BOATDB_LOCAL_REVIEW !== "1"
@@ -24,6 +24,10 @@ export async function localBoatDb() {
     request.get("sec-fetch-site") === "cross-site"
   )
     notFound();
+}
+
+export async function localBoatDb() {
+  await requireLocalBoatDbReview();
   const key = process.env.THEBOATDB_API_KEY ?? "";
   if (boatDbKeyKind(key) !== "live") return null;
   repository ??= createBoatDbRepository(

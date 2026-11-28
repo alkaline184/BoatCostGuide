@@ -2,11 +2,13 @@ import type { NextConfig } from "next";
 
 const config: NextConfig = {
   poweredByHeader: false,
-  outputFileTracingExcludes: { "/*": ["./catalog/review.json"] },
+  outputFileTracingExcludes: {
+    "/*": ["./catalog/review.json", "./.marine-evaluation/**/*"],
+  },
   async headers() {
     return [
       {
-        source: "/provider-review",
+        source: "/provider-review/:path*",
         headers: [
           { key: "Cache-Control", value: "private, no-store" },
           { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },

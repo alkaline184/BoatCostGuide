@@ -54,4 +54,4 @@ Use `npm run dev -- --hostname 127.0.0.1 --port 3006` for the local model review
 
 ### TheBoatDB local review
 
-Run `npm run dev:boatdb` to open the [private explorer](http://127.0.0.1:3005/provider-review). Use `THEBOATDB_API_KEY` in `.env.local`. See the [provider evaluation](docs/THEBOATDB-EVALUATION.md) for the connectivity check, benchmark and publication constraints.
+Run `npm run dev:boatdb` to open the [private explorer](http://127.0.0.1:3005/provider-review). Use `THEBOATDB_API_KEY` in `.env.local`. The [private data quality dashboard](http://127.0.0.1:3005/provider-review/quality) reports the completion audit. See the [provider evaluation](docs/THEBOATDB-EVALUATION.md) for the connectivity check, benchmark and publication constraints.

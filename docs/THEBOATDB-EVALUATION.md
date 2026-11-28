@@ -75,3 +75,5 @@ Use TheBoatDB as a supplementary discovery and photography source under the appl
 The exact-match rule uses a normalized model name or model plus version. Candidate windows can be open-ended. These two signals alone confirmed zero exact US model-year variants. Kawasaki names were reconciled against the official US release, and the retest retained one candidate. The additional Bennington check matched all five OEM floorplan names. Its US floorplan source supplied layout names, with US model year unverified, so these five are outside the 50-target year comparison.
 
 The targeted follow-up consumed 17 authenticated requests, all successful, and ended with 9,929 remaining. It returned 56 records under the PWC activity, 589 in the pontoon category, and 57 in the waterjet category. These filters can overlap and do not establish market. The newest production start observed in this sample was 2027. Source labels such as waterjet can include tenders as well as recreational jet boats.
+
+The completion audit adds field-level and photography verification, pricing, and licensing conclusions in [TheBoatDB completion audit](THEBOATDB-COMPLETION.md).

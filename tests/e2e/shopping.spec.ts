@@ -106,11 +106,14 @@ test("TheBoatDB review stays behind the local opt-in and outside the sitemap", a
   request,
 }) => {
   for (const origin of ["", review]) {
-    const response = await request.get(
-      origin + "/provider-review?model=boat-any",
-    );
-    expect(response.status()).toBe(404);
-    expect(response.headers()["x-robots-tag"]).toContain("noindex");
+    for (const path of [
+      "/provider-review?model=boat-any",
+      "/provider-review/quality",
+    ]) {
+      const response = await request.get(origin + path);
+      expect(response.status()).toBe(404);
+      expect(response.headers()["x-robots-tag"]).toContain("noindex");
+    }
   }
   expect(await (await request.get("/sitemap.xml")).text()).not.toContain(
     "/provider-review",

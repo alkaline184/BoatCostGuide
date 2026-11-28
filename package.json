@@ -20,7 +20,10 @@
     "catalog:diff": "node scripts/catalog-diff.mjs",
     "catalog:vehdb": "node scripts/vehdb-evaluate.mjs",
     "catalog:theboatdb": "node scripts/marine/benchmark-theboatdb.ts",
-    "dev:boatdb": "BOATDB_LOCAL_REVIEW=1 next dev --hostname 127.0.0.1 --port 3005"
+    "dev:boatdb": "BOATDB_LOCAL_REVIEW=1 next dev --hostname 127.0.0.1 --port 3005",
+    "catalog:theboatdb-complete": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/marine/complete-theboatdb.mts",
+    "catalog:theboatdb-photos": "node scripts/marine/photography-audit.mjs",
+    "catalog:theboatdb-verify-fields": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/marine/verify-theboatdb-fields.mts"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "5.3.0",
