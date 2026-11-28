@@ -6,15 +6,15 @@ import { BookOpen, ChevronDown, Compass, Gauge, Wallet } from "lucide-react";
 import { BoatCostCalculator } from "@/components/calculators/boat-cost-calculator";
 import { site } from "@/config/site";
 import { expenses, questions } from "@/content/guides";
-import { catalogForRequest } from "@/lib/marine/catalog-server";
-import { modelPath } from "@/lib/marine/shopping";
+import { searchCatalog } from "@/lib/marine/catalog-server";
+import { categoryMap, modelPath } from "@/lib/marine/shopping";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = pageMetadata("/", {
   noindex: process.env.NODE_ENV === "development",
 });
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 const schema = {
   "@context": "https://schema.org",
@@ -39,7 +39,13 @@ const schema = {
 };
 
 export default async function Home() {
-  const { records } = await catalogForRequest();
+  const records = (
+    await Promise.all(
+      Object.keys(categoryMap).map((category) =>
+        searchCatalog({}, 1, { category }, false, false).catch(() => null),
+      ),
+    )
+  ).flatMap((result) => (result?.page.rows[0] ? [result.page.rows[0]] : []));
   return (
     <>
       <script

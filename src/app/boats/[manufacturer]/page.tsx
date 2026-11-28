@@ -1,16 +1,23 @@
 import { notFound } from "next/navigation";
 import { CatalogExplorer } from "@/components/shopping/catalog-explorer-server";
-import { ShoppingPage } from "@/components/shopping/page-shell";
+import {
+  CatalogUnavailableNotice,
+  ShoppingPage,
+} from "@/components/shopping/page-shell";
 import {
   catalogForRequest,
   publicationDate,
+  searchCatalog,
 } from "@/lib/marine/catalog-server";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 type Props = { params: Promise<{ manufacturer: string }> };
 export async function generateMetadata({ params }: Props) {
   const { manufacturer } = await params;
-  const { records, reviewing } = await catalogForRequest();
+  const { records, reviewing } = await catalogForRequest({
+    manufacturer,
+    limit: 24,
+  });
   const brand = records.find(
     (record) => record.manufacturer.id === manufacturer,
   )?.manufacturer;
@@ -23,7 +30,11 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function Manufacturer({ params }: Props) {
   const { manufacturer } = await params;
-  const { records, reviewing } = await catalogForRequest();
+  const { records, reviewing, unavailable } = await catalogForRequest({
+    manufacturer,
+    limit: 24,
+  });
+  if (unavailable) return <CatalogUnavailableNotice />;
   const matching = records.filter(
     (record) => record.manufacturer.id === manufacturer,
   );
@@ -52,6 +63,9 @@ export default async function Manufacturer({ params }: Props) {
         </p>
       )}
       <CatalogExplorer
+        result={await searchCatalog({}, 1, { manufacturer }).catch(
+          () => undefined,
+        )}
         manufacturerScope={manufacturer}
         records={matching}
         asOf={publicationDate()}

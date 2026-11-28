@@ -11,6 +11,8 @@ import {
   type ShoppingRecord,
 } from "@/lib/marine/shopping";
 import { readNumber } from "@/lib/validation/boat-cost";
+import type { CatalogCardRecord } from "@/lib/marine/catalog-search";
+import { useRouter } from "next/navigation";
 import { DiagramControls } from "@/components/marine/boat-diagrams";
 import { diagramFor } from "@/lib/marine/illustrations";
 import { CatalogImage, ClaimSource, specRows } from "./catalog-ui";
@@ -327,12 +329,15 @@ function ComparePanel({
 export function CompareBoats({
   records,
   initial,
+  options,
   asOf,
 }: {
   records: ShoppingRecord[];
   initial: string[];
+  options?: CatalogCardRecord[];
   asOf: string;
 }) {
+  const router = useRouter();
   const [ids, setIds] = useState(initial);
   const [copy, setCopy] = useState("");
   const selected = ids.map((id) =>
@@ -341,6 +346,18 @@ export function CompareBoats({
   function change(index: number, value: string) {
     const next = [...ids];
     next[index] = value;
+    if (options) {
+      const chosen = [
+        ...new Set(
+          next.filter((id) => options.some((item) => item.variant.id === id)),
+        ),
+      ];
+      router.replace(
+        chosen.length ? "/compare?models=" + chosen.join(",") : "/compare",
+        { scroll: false },
+      );
+      return;
+    }
     const usable = validateComparison(next, records);
     setIds(usable);
     setCopy("");
@@ -361,7 +378,7 @@ export function CompareBoats({
               onChange={(e) => change(index, e.target.value)}
             >
               <option value="">Choose a model</option>
-              {records.map((record) => (
+              {(options ?? records).map((record) => (
                 <option
                   key={record.variant.id}
                   value={record.variant.id}

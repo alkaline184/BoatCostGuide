@@ -1,3 +1,4 @@
+import type { CatalogCardRecord } from "@/lib/marine/catalog-search";
 import { BoatScene } from "@/components/marine/boat-diagrams";
 import { diagramFor } from "@/lib/marine/illustrations";
 import type { Source } from "@/lib/marine/catalog";
@@ -20,7 +21,7 @@ export function CatalogImage({
   asOf,
   eager = false,
 }: {
-  record: ShoppingRecord;
+  record: CatalogCardRecord;
   asOf: string;
   eager?: boolean;
 }) {
@@ -62,7 +63,7 @@ export function CatalogCard({
   operating,
   children,
 }: {
-  record: ShoppingRecord;
+  record: CatalogCardRecord;
   asOf: string;
   terms?: Pick<Budget, "down" | "downMode" | "annualRate" | "months">;
   operating?: number;

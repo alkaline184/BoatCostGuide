@@ -1,17 +1,19 @@
-import { publicCatalog } from "@/lib/marine/catalog-server";
-import { categoryMap, modelPath } from "@/lib/marine/shopping";
+import { catalogIdentities } from "@/lib/marine/catalog-server";
+import { categoryMap } from "@/lib/marine/shopping";
 import type { MetadataRoute } from "next";
 import { pages, site } from "@/config/site";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const records = await publicCatalog();
+  const records = await catalogIdentities().catch(() => []);
+  const modelPath = (record: (typeof records)[number]) =>
+    `/boats/${record.manufacturer_slug}/${record.model_slug}`;
   const models = new Set(records.map(modelPath));
   const paths = new Set([...Object.keys(pages), ...models]);
   if (records.length) paths.add("/boats");
   for (const brand of new Set(
-    records.map((record) => record.manufacturer.id),
+    records.map((record) => record.manufacturer_slug),
   )) {
     const prefix = "/boats/" + brand;
     if (
@@ -25,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (
       new Set(
         records
-          .filter((record) => record.model.category === category)
+          .filter((record) => record.category_slug === category)
           .map(modelPath),
       ).size >= 2
     )

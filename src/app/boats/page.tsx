@@ -3,11 +3,7 @@ import {
   CatalogCoverage,
   ShoppingPage,
 } from "@/components/shopping/page-shell";
-import {
-  catalogForRequest,
-  publicationDate,
-  publicCatalog,
-} from "@/lib/marine/catalog-server";
+import { searchCatalog, publicationDate } from "@/lib/marine/catalog-server";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 type Props = {
@@ -23,28 +19,33 @@ export async function generateMetadata({ searchParams }: Props) {
     noindex:
       process.env.NODE_ENV === "development" ||
       Boolean(Object.keys(query).length) ||
-      (await publicCatalog()).length === 0,
+      !(await searchCatalog({}, 1, {}).catch(() => null))?.page.count,
   });
 }
 export default async function Boats({ searchParams }: Props) {
-  const { records, reviewing } = await catalogForRequest();
   const params = await searchParams;
   const string = (name: string) =>
     typeof params[name] === "string" ? params[name].slice(0, 100) : "";
+  const result = await searchCatalog(
+    { query: string("q"), category: string("type") },
+    1,
+    {},
+  ).catch(() => null);
+  const available = result && result.facets.brands.length > 0;
   return (
     <ShoppingPage
       title="Boat Explorer"
       intro={
-        records.length
+        available
           ? "Browse a curated US catalog and compare model years, specifications and ownership assumptions."
           : "Compare boat types, find official manufacturer lineups, and plan your purchase budget."
       }
       crumbs={[["Boat Explorer", "/boats"]]}
-      reviewing={reviewing}
+      reviewing={result?.reviewing ?? false}
     >
-      {records.length > 0 ? (
+      {available ? (
         <CatalogExplorer
-          records={records}
+          result={result}
           asOf={publicationDate()}
           query={string("q")}
           category={string("type")}
@@ -52,8 +53,9 @@ export default async function Boats({ searchParams }: Props) {
         />
       ) : (
         <p className="catalog-empty">
-          The model catalog is awaiting publication review. Explore official
-          lineups and budget tools below.
+          {result
+            ? "The model catalog is awaiting publication review. Explore official lineups and budget tools below."
+            : "The boat catalog is temporarily unavailable. Buying guides and calculators are still available."}
         </p>
       )}
       <CatalogCoverage />

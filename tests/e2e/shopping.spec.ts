@@ -15,7 +15,7 @@ test("real explorer filters, budgets and opens a comparison", async ({
   await expect(
     page.getByRole("heading", { name: "Boat Explorer" }),
   ).toBeVisible();
-  await expect(page.getByText("50 variants found")).toBeVisible();
+  await expect(page.getByText("79 variants found")).toBeVisible();
   if (info.project.name !== "tablet")
     await page.screenshot({ path: info.outputPath("explorer.png") });
   await expect(page.locator(".catalog-card")).toHaveCount(24);
@@ -23,7 +23,7 @@ test("real explorer filters, budgets and opens a comparison", async ({
     name: "Boat results pages",
   });
   await pagination.getByRole("button", { name: "Next" }).click();
-  await expect(pagination.getByText("Page 2 of 3")).toBeVisible();
+  await expect(pagination.getByText("Page 2 of 4")).toBeVisible();
   await page.getByLabel("Search manufacturer or model").fill("Spark");
   await expect(page.getByText("3 variants found")).toBeVisible();
   await page.getByText("Filter boats", { exact: true }).click();

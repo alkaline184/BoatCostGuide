@@ -6,16 +6,42 @@ import {
   type ShoppingRecord,
 } from "./shopping";
 
+type Specs = ShoppingRecord["variant"]["specs"];
+export type CatalogCardRecord = {
+  manufacturer: Pick<ShoppingRecord["manufacturer"], "id" | "name">;
+  model: Pick<ShoppingRecord["model"], "id" | "name" | "category">;
+  modelYear: Pick<ShoppingRecord["modelYear"], "year">;
+  variant: Pick<ShoppingRecord["variant"], "id" | "name" | "images"> & {
+    prices: ReadonlyArray<
+      Pick<ShoppingRecord["variant"]["prices"][number], "value">
+    >;
+    specs: {
+      length: Pick<Specs["length"], "value">;
+      beam: Pick<Specs["beam"], "value">;
+      passengers: Pick<Specs["passengers"], "value">;
+      widthBasis?: Pick<NonNullable<Specs["widthBasis"]>, "value">;
+      engine: {
+        value: Pick<NonNullable<Specs["engine"]["value"]>, "type"> | null;
+      };
+    };
+  };
+};
+export type CatalogPage = {
+  rows: CatalogCardRecord[];
+  count: number;
+  current: number;
+  last: number;
+  prices?: number[];
+};
 export const catalogPageSize = 24;
 
-export type CatalogPage = ReturnType<typeof paginateCatalog>;
 export function paginateCatalog(
   records: ShoppingRecord[],
   asOf: string,
   filters: Filters,
   page: number,
   includePrices = false,
-) {
+): CatalogPage {
   const rows = filterCatalog(records, filters, asOf, sampleTerms);
   const last = Math.max(1, Math.ceil(rows.length / catalogPageSize));
   const current = Math.min(Math.max(page, 1), last);
@@ -38,7 +64,7 @@ export function paginateCatalog(
   };
 }
 
-export function catalogFacets(records: ShoppingRecord[]) {
+export function catalogFacets(records: CatalogCardRecord[]) {
   return {
     brands: [
       ...new Map(

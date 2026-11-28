@@ -16,3 +16,5 @@ See [provider research](MARINE-DATA-RESEARCH.md), [manufacturer feasibility](MAN
 The development explorer, budget matching, model research and comparison use verified US variants. Finish the source rights review, secure a licensed API evaluation credential, and prioritize adding cross-brand price bands and a second pontoon family. See the [quality report](CATALOG-QUALITY.md).
 
 Phase 3B.2 added a local Supabase catalog and scale-aware research illustrations. The next gate is recorded OEM source clearance and a small approved public pilot. Expand permitted acquisitions after measuring refresh and review effort for that pilot.
+
+Phase 3B.3 prepares hosted database reads and publication decisions, adds an archive batch and retains a separate legal release gate. Priorities are rights clearance, 21 more verified configurations and current price coverage. [Launch blockers](LAUNCH-BLOCKERS.md)

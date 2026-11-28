@@ -55,3 +55,5 @@ Use `npm run dev -- --hostname 127.0.0.1 --port 3006` for the local model review
 Phase 3B.2 expands local catalog coverage to 50 verified variants. Run `npm run catalog:intake` for the intake report and `npm run dev:catalog` for the [private manufacturer review](http://127.0.0.1:3005/catalog-review).
 
 The independent marine catalog can be loaded into local Supabase. See [setup and verification](docs/SUPABASE-SETUP.md) and [publication policy](docs/PUBLICATION-POLICY.md). The explicit local catalog preview uses port 3005.
+
+Phase 3B.3 uses live Supabase publication reads and private offline review on port 3005. See [catalog operations](docs/CATALOG-OPERATIONS.md) and [launch blockers](docs/LAUNCH-BLOCKERS.md).

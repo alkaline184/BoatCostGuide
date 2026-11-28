@@ -39,3 +39,5 @@ The earlier table records the original 21-variant pilot. The expanded result is 
 The dedicated local database imported 50 variants from the baseline plus four editorial batches. Re-importing the same payload produced zero additions and zero changes. Existing trust decisions did not change. See [publication policy](PUBLICATION-POLICY.md).
 
 The local database contains 35 model families, 50 variants, 43 price observations and 401 specification observations, all with source documents. One timed local run took 160 ms for the initial transaction and 116 ms on replay. The anonymous Supabase API returned HTTP 200 and zero rows in a 322 ms cold smoke check. These timings are for the 50-variant pilot.
+
+Phase 3B.3 private review contains 79 variants and 38 current USD observations. Length, fuel and engine descriptions are available for all 79. Width or beam is available for 77, numeric capacity for 75, installed horsepower for 34 and defined dry weight for 50. All non-null normalized claims reference source evidence. Hosted eligible and published counts remain zero.

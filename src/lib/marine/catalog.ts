@@ -146,7 +146,7 @@ export function canPublish(source: Source, asOf: string, indexable = false) {
 }
 
 export function formatObservation<U extends string>(
-  observation: Observation<Measurement<U>>,
+  observation: Pick<Observation<Measurement<U>>, "value">,
 ) {
   if (observation.value === null) return "Unavailable";
   const { amount, unit } = observation.value;

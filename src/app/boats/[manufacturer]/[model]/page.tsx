@@ -3,7 +3,10 @@ import { DiagramControls } from "@/components/marine/boat-diagrams";
 import { diagramFor } from "@/lib/marine/illustrations";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ShoppingPage } from "@/components/shopping/page-shell";
+import {
+  CatalogUnavailableNotice,
+  ShoppingPage,
+} from "@/components/shopping/page-shell";
 import {
   CatalogCard,
   ClaimSource,
@@ -30,7 +33,11 @@ type Props = {
 };
 async function getModel(params: Props["params"]) {
   const { manufacturer, model } = await params;
-  const { records, reviewing } = await catalogForRequest();
+  const { records, reviewing, unavailable } = await catalogForRequest({
+    manufacturer,
+    model,
+    limit: 120,
+  });
   const variants = records
     .filter(
       (boat) =>
@@ -41,13 +48,14 @@ async function getModel(params: Props["params"]) {
         b.modelYear.year - a.modelYear.year ||
         a.variant.id.localeCompare(b.variant.id),
     );
-  if (!variants.length) notFound();
-  return { variants, records, reviewing };
+  if (!variants.length && !unavailable) notFound();
+  return { variants, records, reviewing, unavailable };
 }
 export async function generateMetadata({ params, searchParams }: Props) {
   const { variants, reviewing } = await getModel(params);
   const query = await searchParams;
   const record = variants[0];
+  if (!record) return { robots: { index: false, follow: false } };
   return pageMetadata(modelPath(record), {
     title: `${record.manufacturer.name} ${record.model.name} Specs, Price & Ownership Costs`,
     description: `Research ${record.manufacturer.name} ${record.model.name} US specifications, compare available model years and estimate monthly and five-year costs.`,
@@ -55,10 +63,20 @@ export async function generateMetadata({ params, searchParams }: Props) {
   });
 }
 export default async function Model({ params, searchParams }: Props) {
-  const { variants, records, reviewing } = await getModel(params);
+  const {
+    variants,
+    records: pool,
+    reviewing,
+    unavailable,
+  } = await getModel(params);
+  if (unavailable) return <CatalogUnavailableNotice />;
   const { variant } = await searchParams;
   const record =
     variants.find((item) => item.variant.id === variant) ?? variants[0];
+  const records = reviewing
+    ? pool
+    : (await catalogForRequest({ category: record.model.category, limit: 24 }))
+        .records;
   const name = record.manufacturer.name + " " + record.model.name;
   const asOf = publicationDate();
   const currentPrice = startingPrice(record, asOf);

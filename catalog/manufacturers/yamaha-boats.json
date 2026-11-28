@@ -1,0 +1,1280 @@
+{
+  "brand": "yamaha-boats",
+  "observedAt": "2026-11-27",
+  "records": [
+    {
+      "model": {
+        "family": "SX190",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=78",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [19, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 40,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 422,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 8,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating and recreation",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "AR190",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=78",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [19, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 40,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 422,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 8,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating and recreation",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "SX195",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=78",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [19, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 40,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 422,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 8,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Day boating and recreation",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "AR195",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=78",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [19, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 40,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 422,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 8,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Day boating and recreation",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "195S",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=78",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [19, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 40,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 422,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 8,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Day boating and recreation",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "SX220",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=80",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 70,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 502,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1049,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha TR-1"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "AR220",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=80",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 70,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 502,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1049,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha TR-1"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "222S",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=80",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 70,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 502,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "222SE",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=80",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 70,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 502,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "222SD",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=80",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 70,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 502,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "SX250",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=82",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 731,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "AR250",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=82",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 731,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "252S",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=82",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 750,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "252SE",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=82",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 750,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "252SD",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=82",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 750,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Day boating with passengers",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "275SE",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=84",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [27, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [9, 0],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 90,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 740,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "275SDX",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=84",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [27, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [9, 0],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 90,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 740,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "222XE",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=84",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 70,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 502,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "222XD",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=84",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 70,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 502,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "252XE",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=84",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 613,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "255XE",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=84",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 613,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "255XD",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=84",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 613,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "190 FSH Sport",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=86",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [19, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 40,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 526,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 8,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Fishing and recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "195 FSH Sport",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=86",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [19, 5],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 2],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 40,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 526,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 8,
+      "power": {
+        "type": "jet",
+        "count": 1,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Fishing and recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "220 FSH Sport",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=86",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 542,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1049,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha TR-1"
+      },
+      "intendedUse": "Fishing and recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "222 FSH Sport",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=86",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 542,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Fishing and recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "222 FSH Sport E",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=86",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [22, 0],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 75,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 542,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 10,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Fishing and recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "252 FSH Sport",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=86",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 111,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 557,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L High Output"
+      },
+      "intendedUse": "Fishing and recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    },
+    {
+      "model": {
+        "family": "255 FSH Sport E",
+        "trim": "US standard configuration",
+        "year": 2023,
+        "market": "US",
+        "category": "jet"
+      },
+      "evidence": {
+        "url": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=86",
+        "yearUrl": "https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf#page=1",
+        "verifiedYear": 2023
+      },
+      "facts": {
+        "length": {
+          "value": [24, 6],
+          "unit": "ft+in"
+        },
+        "beam": {
+          "value": [8, 6],
+          "unit": "ft+in"
+        },
+        "fuel": {
+          "value": 111,
+          "unit": "US gal"
+        },
+        "storage": {
+          "value": 543,
+          "unit": "US gal"
+        },
+        "displacement": {
+          "value": 1812,
+          "unit": "cc"
+        }
+      },
+      "capacity": 12,
+      "power": {
+        "type": "jet",
+        "count": 2,
+        "name": "Yamaha 1.8 L Super Vortex High Output"
+      },
+      "intendedUse": "Fishing and recreational jet boating",
+      "editorial": "Check the installed engine package and trailer when comparing used boats. The 2023 brochure lists a boat weight without defining its load condition."
+    }
+  ]
+}

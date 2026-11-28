@@ -1,10 +1,14 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { CatalogExplorer } from "@/components/shopping/catalog-explorer-server";
-import { ShoppingPage } from "@/components/shopping/page-shell";
+import {
+  CatalogUnavailableNotice,
+  ShoppingPage,
+} from "@/components/shopping/page-shell";
 import {
   catalogForRequest,
   publicationDate,
+  searchCatalog,
 } from "@/lib/marine/catalog-server";
 import { categoryMap, modelPath } from "@/lib/marine/shopping";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -22,7 +26,15 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function Category({ params }: Props) {
   const { type } = await params;
-  const { records, reviewing } = await catalogForRequest();
+  const slug = Object.entries(categoryMap).find(
+    ([, item]) => item.slug === type,
+  )?.[0];
+  if (!slug) notFound();
+  const { records, reviewing, unavailable } = await catalogForRequest({
+    category: slug,
+    limit: 24,
+  });
+  if (unavailable) return <CatalogUnavailableNotice />;
   const matching = records.filter(
     (record) => categoryMap[record.model.category].slug === type,
   );
@@ -42,6 +54,9 @@ export default async function Category({ params }: Props) {
         <Image src={category.image} alt="" fill sizes="60vw" />
       </div>
       <CatalogExplorer
+        result={await searchCatalog({}, 1, { category: slug }).catch(
+          () => undefined,
+        )}
         typeScope={type}
         records={matching}
         asOf={publicationDate()}

@@ -1,3 +1,4 @@
+import type { CatalogCardRecord } from "./catalog-search";
 import { manufacturerSources, type ManufacturerKey } from "./manufacturers";
 import { affordability } from "../finance/calculators";
 import { fixedLoan, inRange, limits, remainingBalance } from "../finance/loan";
@@ -201,7 +202,10 @@ function https(value: string) {
     return false;
   }
 }
-export function validPrice(price: PriceObservation, asOf: string) {
+export function validPrice(
+  price: Pick<PriceObservation, "value">,
+  asOf: string,
+) {
   const value = price.value;
   if (
     !value ||
@@ -226,7 +230,7 @@ export function priceBasisLabel(price: NonNullable<PriceObservation["value"]>) {
 }
 
 export function startingPrice(
-  record: ShoppingRecord,
+  record: Pick<CatalogCardRecord, "variant">,
   asOf = new Date().toISOString().slice(0, 10),
 ) {
   return (
@@ -568,5 +572,6 @@ export function validateComparison(
   ].slice(0, 3);
 }
 
-export const modelPath = (record: ShoppingRecord) =>
-  `/boats/${record.manufacturer.id}/${record.model.id}`;
+export const modelPath = (
+  record: Pick<CatalogCardRecord, "manufacturer" | "model">,
+) => `/boats/${record.manufacturer.id}/${record.model.id}`;

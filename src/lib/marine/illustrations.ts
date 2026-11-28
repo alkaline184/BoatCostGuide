@@ -1,4 +1,4 @@
-import type { ShoppingRecord } from "./shopping";
+import type { CatalogCardRecord } from "./catalog-search";
 
 export const templates = [
   "pwc-compact",
@@ -39,7 +39,7 @@ export function inches(value?: { amount: number; unit: string } | null) {
     ? value.amount * factor[value.unit]
     : null;
 }
-export function diagramFor(record: ShoppingRecord): BoatDiagram {
+export function diagramFor(record: CatalogCardRecord): BoatDiagram {
   const { specs } = record.variant;
   const name = record.model.name.toLowerCase();
   const template: BoatTemplate =

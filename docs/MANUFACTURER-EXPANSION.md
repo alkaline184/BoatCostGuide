@@ -53,3 +53,7 @@ The PR base is `feature/phase-3b-real-catalog` at `e263192`. The completed provi
 | Scarab            | US model families, product information guides, and annually released brochures. Exact US year, engine/trim and a matching price basis were not sufficiently reconciled for this batch.          | Get an exact-year US build sheet and published configuration price with written reuse terms. [Scarab models](https://www.scarabjetboats.com/us/Boat) · [Manufacturer guides](https://www.scarabjetboats.com/us/product-information-guides)                  |
 
 The production build and browser checks use the same Next routes, with Webpack available when the local runner blocks Turbopack’s worker port. Start that preview with `npm run dev:catalog -- --webpack`. To run the full tests in that environment, build with `npm run build -- --webpack` and set `PLAYWRIGHT_NEXT_WEBPACK=1` for `npm run test:e2e`.
+
+### Phase 3B.3 archive expansion
+
+The 2023 Yamaha Boats US brochure added 29 distinct jet boat configurations from pages 78–86, bringing private review to 79. The archive supplies hull dimensions, fuel and storage volumes, and exact engine packages. Installed horsepower, US price and a defined dry-weight basis were unavailable in these records. The two 27-foot models have yacht certification without a numerical capacity. [Official brochure](https://www.yamahaboats.com/globalassets/z-old/_boats/all-boats/2023boatbrochure2.pdf)

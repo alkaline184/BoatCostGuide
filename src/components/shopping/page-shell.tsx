@@ -128,3 +128,16 @@ export function CatalogCoverage() {
     </section>
   );
 }
+
+export function CatalogUnavailableNotice() {
+  return (
+    <ShoppingPage
+      title="Boat catalog temporarily unavailable"
+      intro="Try again shortly. Calculators and buying guides are still available."
+      crumbs={[["Boat Explorer", "/boats"]]}
+      reviewing={false}
+    >
+      <Link href="/boats">Boat Explorer</Link>
+    </ShoppingPage>
+  );
+}

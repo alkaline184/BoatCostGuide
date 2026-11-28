@@ -43,6 +43,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Phase 3B catalog
 
-Use the workflow in `docs/CATALOG-INGESTION.md`. Run `npm run catalog:validate` before changing approved data. Keep provider payloads, credentials and restricted assets out of Git. The review catalog is development-only and production consumes the approved catalog.
+Use the workflow in `docs/CATALOG-INGESTION.md`. Run `npm run catalog:validate` before changing approved data. Keep provider payloads, credentials and restricted assets out of Git. The review catalog is development-only and production consumes the live approved catalog.
 
 Database changes must preserve the private `marine` schema and filtered read-only role grants. Validate migrations and imports against the dedicated local project in `docs/SUPABASE-SETUP.md`. Preserve the provenance ledger and recheck publication eligibility whenever a source or observation changes.
+
+Use versioned migrations for catalog operations. Keep synthetic measurements in a disposable test database and rights-pending manufacturer facts out of remote storage. Publishing requires live evidence decisions and must never fall back to a stale static catalog snapshot.

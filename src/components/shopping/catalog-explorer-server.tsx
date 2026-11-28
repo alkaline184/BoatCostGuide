@@ -4,6 +4,7 @@ import { Explorer } from "./explorer";
 
 export function CatalogExplorer({
   records,
+  result,
   asOf,
   query,
   category,
@@ -11,7 +12,11 @@ export function CatalogExplorer({
   manufacturerScope,
   typeScope,
 }: {
-  records: ShoppingRecord[];
+  records?: ShoppingRecord[];
+  result?: {
+    page: ReturnType<typeof paginateCatalog>;
+    facets: ReturnType<typeof catalogFacets>;
+  };
   asOf: string;
   query?: string;
   category?: string;
@@ -21,8 +26,11 @@ export function CatalogExplorer({
 }) {
   return (
     <Explorer
-      initial={paginateCatalog(records, asOf, { query, category }, 1)}
-      facets={catalogFacets(records)}
+      initial={
+        result?.page ??
+        paginateCatalog(records ?? [], asOf, { query, category }, 1)
+      }
+      facets={result?.facets ?? catalogFacets(records ?? [])}
       asOf={asOf}
       query={query}
       category={category}

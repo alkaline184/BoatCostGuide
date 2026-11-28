@@ -1,8 +1,4 @@
-import {
-  catalogForRequest,
-  publicationDate,
-} from "@/lib/marine/catalog-server";
-import { paginateCatalog } from "@/lib/marine/catalog-search";
+import { searchCatalog } from "@/lib/marine/catalog-server";
 import { categoryMap } from "@/lib/marine/shopping";
 
 export async function GET(request: Request) {
@@ -15,38 +11,41 @@ export async function GET(request: Request) {
       ? value
       : undefined;
   };
-  const { records, reviewing } = await catalogForRequest();
   const scope = text("manufacturerScope");
   const type = text("typeScope");
-  const allowed = records.filter(
-    (record) =>
-      (!scope || record.manufacturer.id === scope) &&
-      (!type || categoryMap[record.model.category].slug === type),
-  );
+  const category = Object.entries(categoryMap).find(
+    ([, value]) => value.slug === type,
+  )?.[0];
   const includePrices = text("priceIndex") === "1";
-  const page = paginateCatalog(
-    allowed,
-    publicationDate(),
-    {
-      query: text("query"),
-      brand: text("brand"),
-      category: text("category"),
-      year: numeric("year"),
-      minPrice: numeric("minPrice"),
-      maxPrice: numeric("maxPrice"),
-      minLength: numeric("minLength"),
-      minHp: numeric("minHp"),
-      passengers: numeric("passengers"),
-      propulsion: text("propulsion"),
-      sort: includePrices ? "price" : text("sort"),
-    },
-    Math.floor(numeric("page") ?? 1),
-    includePrices,
-  );
-  return Response.json(page, {
-    headers: {
-      "Cache-Control": reviewing ? "private, no-store" : "no-store",
-      "X-Robots-Tag": "noindex, nofollow",
-    },
-  });
+  const headers = {
+    "Cache-Control": "private, no-store",
+    "X-Robots-Tag": "noindex, nofollow",
+  };
+  try {
+    const { page } = await searchCatalog(
+      {
+        query: text("query"),
+        brand: text("brand"),
+        category: text("category"),
+        year: numeric("year"),
+        minPrice: numeric("minPrice"),
+        maxPrice: numeric("maxPrice"),
+        minLength: numeric("minLength"),
+        minHp: numeric("minHp"),
+        passengers: numeric("passengers"),
+        propulsion: text("propulsion"),
+        sort: includePrices ? "price" : text("sort"),
+      },
+      Math.floor(numeric("page") ?? 1),
+      { manufacturer: scope, category: category ?? (type || undefined) },
+      includePrices,
+      false,
+    );
+    return Response.json(page, { headers });
+  } catch {
+    return Response.json(
+      { message: "The boat catalog is temporarily unavailable." },
+      { status: 503, headers },
+    );
+  }
 }
