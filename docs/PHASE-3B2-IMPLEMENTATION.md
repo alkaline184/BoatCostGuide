@@ -30,7 +30,7 @@ The Webpack production build, TypeScript, ESLint, formatting, 69 unit tests, 81 
 
 The initial 50-row import took 160 ms and replay took 116 ms in one local run. The anonymous Supabase API returned zero rows in a 322 ms cold smoke check. The gallery contains 38 rendered SVG elements. A desktop Chrome `getBBox()` pass across the 38 took 8.7 ms. This measures geometry queries on the rendered gallery. A manufacturer-filtered SQL explain on the rights-pending database returned zero rows and short-circuited downstream joins at the variant status filter.
 
-One mobile Lighthouse run on the production homepage recorded 48 performance, 100 accessibility, 100 SEO, LCP 3.87 seconds, CLS 0, and approximately 154 kB of transferred JavaScript. It ran while the browser suite was active. Real catalog detail pages were checked separately in local review because those records have no public approval.
+One mobile Lighthouse run on the production homepage recorded 48 performance, 100 accessibility, 100 SEO, LCP 3.87 seconds, CLS 0, and approximately 154 kB of transferred JavaScript. It ran while the browser suite was active. With the suite finished, a repeat recorded 95 performance, 100 accessibility, 100 SEO, LCP 2.86 seconds, CLS 0.00013, and the same JavaScript transfer. Desktop and mobile catalog view checks reported zero Axe violations in the checked model and comparison views. Real catalog detail pages were checked separately in local review because those records have no public approval.
 
 ## Remaining release work
 
