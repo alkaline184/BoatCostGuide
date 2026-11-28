@@ -18,7 +18,9 @@
     "catalog:validate": "BOAT_CATALOG_VALIDATE=1 vitest run tests/unit/catalog-shopping.test.ts",
     "catalog:quality": "BOAT_CATALOG_REPORT=1 npm run catalog:validate -- --silent=false",
     "catalog:diff": "node scripts/catalog-diff.mjs",
-    "catalog:vehdb": "node scripts/vehdb-evaluate.mjs"
+    "catalog:vehdb": "node scripts/vehdb-evaluate.mjs",
+    "catalog:theboatdb": "node scripts/marine/benchmark-theboatdb.ts",
+    "dev:boatdb": "BOATDB_LOCAL_REVIEW=1 next dev --hostname 127.0.0.1 --port 3005"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "5.3.0",

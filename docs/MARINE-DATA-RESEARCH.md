@@ -62,3 +62,7 @@ Price Digests, Marine CONNECT and Boatpedia were evaluated from public product i
 ### Phase 3B findings
 
 Reviewed 21 US variants using official publications and the current VehDB documentation. The authenticated VehDB evaluation remains credential-blocked. See the [quality report](CATALOG-QUALITY.md) for gaps and restrictions and the [competitive review](COMPETITIVE-ANALYSIS.md) for discovery and cost workflows.
+
+### TheBoatDB authenticated evaluation
+
+Phase 3B.1 exercised the live REST API and integrated the provider into an opted-in loopback review. Read the [authenticated evaluation](THEBOATDB-EVALUATION.md) for benchmark results, observed quota and recommended use.

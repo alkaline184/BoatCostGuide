@@ -14,3 +14,7 @@ See [provider research](MARINE-DATA-RESEARCH.md), [manufacturer feasibility](MAN
 ## Phase 3B pilot and publication
 
 The development explorer, budget matching, model research and comparison use verified US variants. Finish the source rights review, secure a licensed API evaluation credential, and prioritize adding cross-brand price bands and a second pontoon family. See the [quality report](CATALOG-QUALITY.md).
+
+## Phase 3B.1
+
+Authenticated TheBoatDB exploration is available for local review. Use the provider benchmark to assess future catalogue coverage and resolve exact-market, model-year and publication terms before enabling indexable pages.

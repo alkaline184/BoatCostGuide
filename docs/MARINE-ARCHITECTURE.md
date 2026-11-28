@@ -33,3 +33,7 @@ The Phase 3A prototype routes under `/research-preview` are dev-only, explicitly
 ## Phase 3B shopping routes
 
 The approved static catalog is validated on the server and filtered through observation-level publication permissions. Development reads the independently compiled factual review catalog from disk. The explorer and comparison serialize only the catalog available to the current environment. Manufacturer and category pages need two distinct model families. Stale prices are excluded from estimates and filtering. Compare URLs contain at most three validated variant IDs. The shopping UI keeps financial assumptions in component state.
+
+## TheBoatDB local provider review
+
+The server adapter separates HTTPS transport, response parsing and normalization from rendering. Provider build windows and indicative prices use a provider record model distinct from the published US model-year schema. The loopback review uses live requests and bounded in-memory cache, with no supplier data imported into the approved static catalog.

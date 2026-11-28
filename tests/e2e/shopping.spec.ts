@@ -101,3 +101,18 @@ test("public sitemap excludes rights-pending combinations", async ({
     /\/boats|\/boat-types|\/compare|research-preview/,
   );
 });
+
+test("TheBoatDB review stays behind the local opt-in and outside the sitemap", async ({
+  request,
+}) => {
+  for (const origin of ["", review]) {
+    const response = await request.get(
+      origin + "/provider-review?model=boat-any",
+    );
+    expect(response.status()).toBe(404);
+    expect(response.headers()["x-robots-tag"]).toContain("noindex");
+  }
+  expect(await (await request.get("/sitemap.xml")).text()).not.toContain(
+    "/provider-review",
+  );
+});

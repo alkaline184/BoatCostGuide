@@ -51,3 +51,7 @@ Use Vercel with the Next.js framework preset and the repository root as the proj
 ### Catalog development
 
 Use `npm run dev -- --hostname 127.0.0.1 --port 3006` for the local model review. Use `npm run build` followed by `npm run start -- --hostname 127.0.0.1 --port 3005` for the production preview. Phase 3B includes 21 verified variants awaiting publication clearance. Production Boat Explorer currently offers the official lineup directory and planning tools. See [catalog ingestion](docs/CATALOG-INGESTION.md) and [catalog quality](docs/CATALOG-QUALITY.md).
+
+### TheBoatDB local review
+
+Run `npm run dev:boatdb` to open the [private explorer](http://127.0.0.1:3005/provider-review). Use `THEBOATDB_API_KEY` in `.env.local`. See the [provider evaluation](docs/THEBOATDB-EVALUATION.md) for the connectivity check, benchmark and publication constraints.
