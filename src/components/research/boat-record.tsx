@@ -77,6 +77,8 @@ export function BoatImage({
 
 const priceLabels = {
   msrp: "MSRP",
+  "manufacturer-starting": "Manufacturer starting price",
+  promotional: "Promotional price",
   "dealer-asking": "Dealer asking price",
   "actual-sale": "Actual sale price",
   "estimated-market": "Estimated market value",

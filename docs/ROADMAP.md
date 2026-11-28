@@ -10,3 +10,7 @@ Phase 1 delivered the introductory estimator. Phase 2 delivered dedicated loan, 
 4. Add official recall citations after applicability checks. Expand coverage after measuring correction workload and consumer engagement. Evaluate a database when approved volumes and update frequency warrant it.
 
 See [provider research](MARINE-DATA-RESEARCH.md), [manufacturer feasibility](MANUFACTURER-DATA.md), [marine architecture](MARINE-ARCHITECTURE.md) and [visual assets](VISUAL-ASSETS.md).
+
+## Phase 3B pilot and publication
+
+The development explorer, budget matching, model research and comparison use verified US variants. Finish the source rights review, secure a licensed API evaluation credential, and prioritize adding cross-brand price bands and a second pontoon family. See the [quality report](CATALOG-QUALITY.md).

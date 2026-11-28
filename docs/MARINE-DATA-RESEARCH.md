@@ -58,3 +58,7 @@ Price Digests, Marine CONNECT and Boatpedia were evaluated from public product i
 4. Ask [USCG Boating Safety](https://uscgboating.org/content/contact-us.php) for the supported MIC and recall access method, redistribution terms, refresh cadence and campaign matching fields. Begin with official citations and manual campaign review.
 5. If pricing adds enough utility later, get separate quotes from Price Digests and J.D. Power for commercial web valuations. For live listings, contact Boats Group and require deletion/unpublish SLA and an approved listing-photo license. Defer Marinebase until sailboat coverage is needed, and revisit Boatpedia after public access resumes.
 6. Authorize a trial or fee only after written usage terms, target coverage and cost are clear. Supply evaluation credentials through a secure secret store, scoped to staging. Keep actual model imagery absent until a specific asset grant is recorded. Phase 3A’s generic category art is already available for editorial use.
+
+### Phase 3B findings
+
+Reviewed 21 US variants using official publications and the current VehDB documentation. The authenticated VehDB evaluation remains credential-blocked. See the [quality report](CATALOG-QUALITY.md) for gaps and restrictions and the [competitive review](COMPETITIVE-ANALYSIS.md) for discovery and cost workflows.

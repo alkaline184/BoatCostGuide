@@ -57,6 +57,9 @@ export type ModelYear = {
 export type Engine = {
   type: "outboard" | "inboard" | "stern-drive" | "jet" | "electric" | "none";
   count: number | null;
+  name?: string;
+  totalPower?: Power | null;
+  displacement?: Measurement<"cc" | "L"> | null;
   powerPerEngine: Power | null;
   fuel: "gasoline" | "diesel" | "electric" | null;
 };
@@ -65,6 +68,9 @@ export type Specifications = {
   beam: Observation<Length>;
   draft: Observation<Length>;
   dryWeight: Observation<Weight>;
+  dryWeightBasis?: Observation<string>;
+  storageCapacity?: Observation<Fuel>;
+  hullMaterial?: Observation<string>;
   fuelCapacity: Observation<Fuel>;
   passengers: Observation<Measurement<"persons">>;
   engine: Observation<Engine>;
@@ -75,11 +81,18 @@ export type Specifications = {
   }>;
 };
 export type PriceObservation = Observation<{
-  kind: "msrp" | "dealer-asking" | "actual-sale" | "estimated-market";
+  kind:
+    | "manufacturer-starting"
+    | "promotional"
+    | "msrp"
+    | "dealer-asking"
+    | "actual-sale"
+    | "estimated-market";
   amount: number;
   currency: "USD";
   observedAt: string;
   includedItems: readonly string[];
+  excludedItems?: readonly string[];
 }>;
 export type ImageAsset = Observation<{
   path: string;
@@ -151,7 +164,7 @@ export function recordsHaveConsistentIdentity(record: CatalogRecord) {
     variant.modelYearId === modelYear.id &&
     Number.isInteger(modelYear.year) &&
     observations.every(
-      (observation) => observation.modelYear === modelYear.year,
+      (observation) => observation?.modelYear === modelYear.year,
     )
   );
 }

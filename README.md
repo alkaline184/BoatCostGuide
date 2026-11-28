@@ -47,3 +47,7 @@ All four tools share a fixed-rate monthly loan model. See the [financial methodo
 ## Deployment and next phase
 
 Use Vercel with the Next.js framework preset and the repository root as the project directory. See [deployment](docs/DEPLOYMENT.md) for TLS, preview indexing, exact HTTP 301 redirects and launch checks. [Product](docs/PRODUCT.md), [SEO strategy](docs/SEO-STRATEGY.md) and [roadmap](docs/ROADMAP.md) cover launch scope and upcoming work.
+
+### Catalog development
+
+Use `npm run dev -- --hostname 127.0.0.1 --port 3006` for the local model review. Use `npm run build` followed by `npm run start -- --hostname 127.0.0.1 --port 3005` for the production preview. Phase 3B includes 21 verified variants awaiting publication clearance. Production Boat Explorer currently offers the official lineup directory and planning tools. See [catalog ingestion](docs/CATALOG-INGESTION.md) and [catalog quality](docs/CATALOG-QUALITY.md).

@@ -26,10 +26,13 @@ test("boat types reveal useful guidance and public links stay production-safe", 
   await expect(pontoon).toHaveAttribute("open", "");
   await expect(pontoon.getByText(/Compare deck layouts/)).toBeVisible();
   expect(errors).toEqual([]);
+  const explorer = await request.get("/boats");
+  expect(explorer.status()).toBe(200);
+  expect(await explorer.text()).toContain("awaiting publication review");
   for (const url of [
     "/research-preview/model",
     "/research-preview/compare",
-    "/boats",
+    "/boats/sea-doo/spark",
     "/compare",
   ]) {
     expect((await request.get(url)).status()).toBe(404);

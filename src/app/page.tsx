@@ -6,9 +6,15 @@ import { BookOpen, ChevronDown, Compass, Gauge, Wallet } from "lucide-react";
 import { BoatCostCalculator } from "@/components/calculators/boat-cost-calculator";
 import { site } from "@/config/site";
 import { expenses, questions } from "@/content/guides";
+import { catalogForRequest } from "@/lib/marine/catalog-server";
+import { modelPath } from "@/lib/marine/shopping";
 import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = pageMetadata("/");
+export const metadata = pageMetadata("/", {
+  noindex: process.env.NODE_ENV === "development",
+});
+
+export const revalidate = 3600;
 
 const schema = {
   "@context": "https://schema.org",
@@ -32,7 +38,8 @@ const schema = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const { records } = await catalogForRequest();
   return (
     <>
       <script
@@ -72,6 +79,13 @@ export default function Home() {
             <a href="#explore" className="button discovery-primary">
               Explore boat types
             </a>
+            <Link
+              href="/boats"
+              prefetch={false}
+              className="button discovery-secondary"
+            >
+              Explore boats
+            </Link>
             <a href="#calculators" className="button discovery-secondary">
               Plan your budget
             </a>
@@ -109,12 +123,58 @@ export default function Home() {
                     </div>
                   </summary>
                   <p>{detail}</p>
+                  {records.some((record) => record.model.category === id) && (
+                    <p>
+                      <Link href={`/boats?type=${id}`}>
+                        Browse {name.toLowerCase()}
+                      </Link>
+                    </p>
+                  )}
                 </details>
               </li>
             ))}
           </ul>
         </div>
       </section>
+      {records.length > 0 && (
+        <section
+          className="section discovery-section"
+          aria-labelledby="model-search"
+        >
+          <div className="container">
+            <h2 id="model-search">Find a model</h2>
+            <form action="/boats" className="shop-fields">
+              <label className="tool-select">
+                Manufacturer or model <input name="q" type="search" />
+              </label>
+              <button className="button discovery-primary" type="submit">
+                Search boats
+              </button>
+            </form>
+            <div className="discovery-actions">
+              <Link href="/boats?budget=1">Shop by budget</Link>
+              {records.length >= 2 && (
+                <Link href="/compare">Compare boats</Link>
+              )}
+            </div>
+            <h3>Selected models</h3>
+            <ul>
+              {[
+                ...new Map(
+                  records.map((record) => [record.model.category, record]),
+                ).values(),
+              ].map((record) => (
+                <li key={record.variant.id}>
+                  <Link href={modelPath(record)}>
+                    {record.modelYear.year} {record.manufacturer.name}{" "}
+                    {record.model.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
       <section className="section ownership-feature">
         <div className="container editorial-grid">
           <div>

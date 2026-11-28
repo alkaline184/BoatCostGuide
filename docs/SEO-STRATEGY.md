@@ -11,3 +11,7 @@ After launch, submit the canonical sitemap via Search Console. Use indexing, eng
 Phase 2 gives fixed-rate payment and amortization intent to the dedicated loan calculator. The homepage targets broader budgeting and ownership planning. Affordability, ownership cost and payoff calculations have distinct canonical routes, preview-aware indexing, server-rendered copy, breadcrumbs, and reciprocal links. Amortization is part of the loan route.
 
 Phase 3A shifts the homepage to broader boat discovery and ownership intent. Boat-type educational disclosures are server-rendered on the homepage. The model and comparison prototypes are development-only, noindex and absent from the sitemap. See the [indexing criteria](MARINE-ARCHITECTURE.md) before creating public catalog routes.
+
+## Phase 3B indexing
+
+The sitemap uses the same rights and verification gate as production model pages. Maker and type pages require two distinct families. The reviewed catalog and arbitrary filter and comparison queries remain noindex. Family URLs are canonical across variant query states. Product offers, review scores and merchant markup are absent. The public Boat Explorer is noindex while it serves the publication-pending directory.
